@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Trò chơi giáo dục tương tác khám phá học thuyết giá trị thặng dư của Karl Marx qua câu chuyện khởi nghiệp cùng Minh.">
+  <title>The Capital Journey - Khởi nghiệp cùng Minh</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Game Dashboard Header -->
+  <header class="game-header" id="game-dashboard-header">
+    <div class="game-title">
+      <h2>The Capital Journey</h2>
+      <div id="chapter-title-header">Chuẩn bị khởi nghiệp</div>
+    </div>
+    
+    <div class="chapter-progress">
+      <div class="progress-label">Tiến trình học tập</div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="progress-bar-fill"></div>
+      </div>
+    </div>
+    
+    <div class="metrics-bar">
+      <div class="metric-item" title="Tổng lợi nhuận tích lũy">
+        <span class="icon">💰</span>
+        <span class="val" id="stat-profit">50 triệu VNĐ</span>
+      </div>
+      <div class="metric-item" title="Số lượng nhân sự">
+        <span class="icon">👥</span>
+        <span class="val" id="stat-employees">5 người</span>
+      </div>
+      <div class="metric-item" title="Độ hài lòng nhân viên">
+        <span class="icon">😊</span>
+        <span class="val" id="stat-satisfaction">85%</span>
+      </div>
+      <div class="metric-item" title="Tỷ lệ tự động hóa công nghệ">
+        <span class="icon">🤖</span>
+        <span class="val" id="stat-automation">10%</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Viewport Area -->
+  <main class="main-viewport" id="game-main-viewport">
+    
+    <!-- 1. START SCREEN -->
+    <section class="screen" id="start-screen" style="display: flex;">
+      <div class="start-card glass-panel">
+        <div class="logo-container">
+          <h1>THE CAPITAL JOURNEY</h1>
+        </div>
+        <p class="tagline">Mỗi quyết định kinh doanh không chỉ định hình sự phát triển của doanh nghiệp mà còn mở ra hành trình khám phá bản chất của giá trị thặng dư trong nền kinh tế tư bản chủ nghĩa.</p>
+        <div class="start-actions">
+          <button class="btn-primary" id="start-game-btn">Khởi nghiệp ngay</button>
+          <button class="btn-secondary" id="resume-game-btn" style="display: none;">Tiếp tục hành trình</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. STORY / DIALOGUE SCREEN -->
+    <section class="screen" id="story-screen">
+      <div class="portrait-container">
+        <img class="character-img" id="character-portrait" src="img/character/Minh (Nhân vật chính).png" alt="Character Portrait">
+      </div>
+      
+      <div class="dialogue-container glass-panel">
+        <div class="speaker-badge" id="speaker-name">Minh</div>
+        <div class="dialogue-text-box" id="dialogue-text">
+          Chào mừng các bạn đến với dự án MINHWEAR.
+        </div>
+        <div class="choices-box" id="choices-container">
+          <!-- Choice buttons dynamically generated -->
+        </div>
+        <button class="continue-indicator" id="continue-dialogue-btn">
+          Tiếp tục ➔
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE SIMULATION SCREEN -->
+    <section class="screen" id="simulation-screen">
+      <div class="sim-wrapper glass-panel">
+        <h2 id="sim-title">Mô phỏng doanh nghiệp</h2>
+        <div id="sim-content-container">
+          <!-- Simulation specific interactive elements loaded here -->
+        </div>
+        <div style="display: flex; justify-content: center; margin-top: 1rem;">
+          <button class="btn-primary" id="sim-next-btn">Tiếp tục hành trình</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. THEORY READING SCREEN -->
+    <section class="screen" id="theory-screen">
+      <div class="theory-wrapper glass-panel">
+        <h2>Thư Viện Kiến Thức Kinh Tế</h2>
+        <div class="theory-text-box" id="theory-text">
+          Nội dung lý thuyết giá trị thặng dư sẽ được cập nhật tại đây.
+        </div>
+        <div class="theory-actions">
+          <button class="btn-primary" id="start-quiz-btn">Làm bài kiểm tra (Quiz) ➔</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. QUIZ ROOM SCREEN -->
+    <section class="screen" id="quiz-screen">
+      <div class="quiz-wrapper glass-panel">
+        <div class="quiz-header">
+          <h3 id="quiz-question-number">Câu hỏi 1/5</h3>
+          <span class="question-number">Quiz Room</span>
+        </div>
+        <div class="quiz-body">
+          <div class="quiz-question" id="quiz-question-text">
+            Nội dung câu hỏi trắc nghiệm kinh tế?
+          </div>
+          <div class="quiz-options" id="quiz-options-container">
+            <!-- Dynamically populated answer choices -->
+          </div>
+          <div class="quiz-explanation" id="quiz-explanation-box">
+            Nội dung giải thích đáp án.
+          </div>
+          <div class="quiz-actions">
+            <button class="btn-primary" id="quiz-next-btn" style="display: none;">Câu tiếp theo ➔</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ENDING SCREEN -->
+    <section class="screen" id="end-screen">
+      <div class="end-wrapper glass-panel">
+        <h1>HÀNH TRÌNH ĐÃ HOÀN THÀNH!</h1>
+        <p class="end-desc">Chúc mừng! Bạn đã đưa MINHWEAR từ một xưởng may nhỏ trở thành một doanh nghiệp phát triển bền vững trong nền kinh tế số.</p>
+        
+        <div class="final-stats-grid">
+          <div class="final-stat-card" id="end-profit">💰 Lợi nhuận: 18.5 tỷ VNĐ</div>
+          <div class="final-stat-card" id="end-employees">👥 Nhân viên: 420 người</div>
+          <div class="final-stat-card" id="end-automation">🤖 Tự động hóa: 75%</div>
+          <div class="final-stat-card" id="end-satisfaction">😊 Sự hài lòng: 84%</div>
+        </div>
+        
+        <div class="end-message">
+          <p><strong>Thông điệp cuối cùng:</strong> Bạn đã thành công trong việc xây dựng một doanh nghiệp phát triển. Nhưng thành công lớn nhất là bạn đã hiểu được bản chất của giá trị thặng dư - từ cách nó được tạo ra trong quá trình sản xuất đến cách các doanh nghiệp hiện đại vận dụng công nghệ số và AI để gia tăng giá trị thặng dư tương đối.</p>
+        </div>
+        
+        <button class="btn-primary" id="restart-game-btn">Chơi lại từ đầu</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Load JavaScript Code -->
+  <script src="game.js"></script>
+</body>
+</html>

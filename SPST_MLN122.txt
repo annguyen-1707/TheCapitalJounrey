@@ -1,0 +1,675 @@
+🎮 THE CAPITAL JOURNEY
+Khởi nghiệp cùng Minh – Hành trình khám phá giá trị thặng dư
+✨ Tagline
+Mỗi quyết định kinh doanh không chỉ định hình sự phát triển của doanh nghiệp mà còn mở ra hành trình khám phá bản chất của giá trị thặng dư trong nền kinh tế tư bản chủ nghĩa.
+
+📖 GAME BACKGROUND
+The Capital Journey là một web game giáo dục được phát triển theo mô hình Interactive Storytelling, kết hợp giữa mô phỏng quản trị doanh nghiệp và học tập tương tác nhằm giúp người chơi tiếp cận học thuyết giá trị thặng dư của Karl Marx một cách trực quan, sinh động và dễ hiểu.
+Trong trò chơi, người chơi sẽ nhập vai Minh, một sinh viên năm cuối Đại học FPT vừa giành chiến thắng trong cuộc thi Startup Challenge với số vốn khởi nghiệp 500 triệu đồng. Mang trong mình khát vọng xây dựng thương hiệu thời trang Việt MINHWEAR, Minh bắt đầu hành trình phát triển doanh nghiệp từ một xưởng may nhỏ, từng bước mở rộng quy mô để trở thành một thương hiệu có khả năng cạnh tranh trên thị trường.
+
+Xuyên suốt hành trình đó, người chơi sẽ liên tục đưa ra những quyết định quản trị quan trọng như đầu tư vốn, tuyển dụng lao động, phân bổ nguồn lực, nâng cao năng suất sản xuất và mở rộng hoạt động kinh doanh. Mỗi quyết định không chỉ tác động đến các chỉ số của doanh nghiệp như doanh thu, chi phí, lợi nhuận, năng suất lao động và mức độ hài lòng của nhân viên, mà còn dẫn dắt người chơi khám phá từng khái niệm cốt lõi trong học thuyết giá trị thặng dư.
+
+Thông qua chuỗi câu chuyện, tình huống mô phỏng và các thử thách tương tác, người chơi sẽ từng bước giải đáp những câu hỏi kinh tế quan trọng như: Nguồn gốc của lợi nhuận đến từ đâu? Vì sao sức lao động được xem là một loại hàng hóa đặc biệt? Tiền công có phản ánh đầy đủ giá trị mà người lao động tạo ra hay không? Doanh nghiệp có thể gia tăng giá trị thặng dư bằng những phương pháp nào? Và trong bối cảnh nền kinh tế số, các nền tảng như Grab, ShopeeFood hay Be đã vận dụng những nguyên lý này ra sao?
+
+Mục tiêu của The Capital Journey không chỉ là giúp người chơi xây dựng một doanh nghiệp thành công, mà còn giúp họ hiểu rõ bản chất của giá trị thặng dư và biết cách vận dụng những kiến thức này để phân tích các mô hình kinh doanh trong thực tiễn hiện đại.
+
+👥 NHÂN VẬT
+👨‍💼 Minh – Nhà sáng lập MINHWEAR (Nhân vật chính)
+Sinh viên năm cuối Đại học FPT.
+Sở hữu 500 triệu đồng vốn khởi nghiệp.
+Thành lập thương hiệu thời trang MINHWEAR.
+Người chơi sẽ nhập vai Minh và đưa ra mọi quyết định trong suốt hành trình phát triển doanh nghiệp.
+
+👩‍🏭 Lan – Quản lý sản xuất
+Phụ trách vận hành nhà xưởng và quản lý hoạt động sản xuất.
+Cung cấp các số liệu về năng suất, chi phí và lao động sau mỗi quyết định của người chơi.
+Hỗ trợ người chơi đánh giá hiệu quả của từng chiến lược kinh doanh.
+
+👨‍🔧 Anh Nam – Công nhân
+Đại diện cho người lao động trong doanh nghiệp.
+Giúp người chơi hiểu rõ các khái niệm về sức lao động, tiền công, thời gian lao động tất yếu và lao động thặng dư thông qua các tình huống thực tế trong nhà máy.
+
+👨‍💼 Ông Hoàng – Cố vấn đầu tư
+Nhà đầu tư đồng hành cùng Minh từ những ngày đầu khởi nghiệp.
+Luôn đặt ra những câu hỏi phản biện về hiệu quả kinh doanh và nguồn gốc của lợi nhuận.
+Là nhân vật dẫn dắt người chơi khám phá và lý giải các nội dung lý thuyết xuyên suốt trò chơi.
+
+🎯 GAMEPLAY
+Mỗi chương trong The Capital Journey được thiết kế theo một quy trình học tập tương tác, kết hợp giữa kể chuyện, ra quyết định và củng cố kiến thức.
+📖 Story
+Người chơi theo dõi diễn biến câu chuyện và những tình huống doanh nghiệp đang phải đối mặt.
+⬇️
+🤔 Decision
+Đưa ra quyết định kinh doanh trước những lựa chọn mang tính chiến lược.
+⬇️
+📊 Business Result
+Quan sát sự thay đổi của các chỉ số doanh nghiệp như doanh thu, lợi nhuận, năng suất và chi phí sau mỗi quyết định.
+⬇️
+📚 Theory
+Khám phá và hiểu rõ khái niệm kinh tế được giải thích dựa trên học thuyết giá trị thặng dư của Karl Marx.
+⬇️
+📝 Quiz
+Hoàn thành bài kiểm tra ngắn để củng cố kiến thức và mở khóa chương tiếp theo.
+
+
+Cấu hình ảnh : 
+BG_Start_Screen (Màn hình mở đầu/Menu chính):
+Mô tả: Hình ảnh mang tính biểu tượng của game. Có thể phối cảnh logo game "THE CAPITAL JOURNEY", hình ảnh của Minh (nhân vật chính) đứng trước một thành phố hiện đại hoặc hình vẽ nghệ thuật kết hợp giữa tài chính (đồng xu, biểu đồ) và thời trang (mẫu thiết kế, cuộn vải).
+BG_Quiz_Room (Góc kiểm tra kiến thức):
+Mô tả: Một không gian học thuật nhẹ nhàng, sạch sẽ như một góc bàn làm việc có sách vở, máy tính FPT, hoặc một giảng đường đại học hiện đại để người chơi tập trung làm quiz sau mỗi chương.
+BG_Ending_Screen (Màn hình kết quả chung cuộc):
+Mô tả: Văn phòng tổng công ty MINHWEAR hoành tráng, hiện đại với cửa kính lớn nhìn ra thành phố, biểu thị sự thành công vượt bậc sau 3 năm.
+2. Nhóm Bối Cảnh Cốt Truyện Theo Chương (Story Backgrounds)
+Dựa trên hành trình phát triển của MINHWEAR từ một xưởng may nhỏ lên nền tảng số, các background cần phản ánh đúng sự thay đổi về quy mô này.
+Chương
+Tên Chương / Nội dung bối cảnh
+Ý tưởng thiết kế Background
+Chapter 1
+Nguồn gốc của giá trị thặng dư (Minh tổng kết tháng đầu tiên có 50 triệu lợi nhuận)
+BG_Small_Workshop: Một xưởng may nhỏ, đơn sơ. Có vài máy may đời cũ, một vài cuộn vải thô, ánh sáng ấm cúng nhưng hơi chật hẹp.
+Chapter 2
+Công thức chung của tư bản (Cuộc họp cuối tháng bàn về việc dùng 500 triệu tái đầu tư hay gửi ngân hàng)
+BG_Meeting_Room_1: Phòng họp nhỏ của xưởng may, có bảng viết tay, máy tính laptop của Minh và vài ly cà phê trên bàn.
+Chapter 3
+Hàng hóa sức lao động (Tuyển thêm 20 công nhân mới)
+BG_Recruitment_Office: Phòng tuyển dụng hoặc góc làm việc của Minh nơi anh phỏng vấn các ứng viên (có hồ sơ xin việc, ghế đối diện).
+Chapter 4
+Sự sản xuất giá trị thặng dư (Minh quan sát anh Nam làm việc 8 tiếng trong xưởng)
+BG_Production_Line_1: Khu vực công nhân làm việc tại xưởng. Có anh Nam đang ngồi bên bàn máy may, ánh sáng tập trung vào dây chuyền sản xuất thủ công.
+Chapter 5
+Tư bản bất biến và tư bản khả biến (Có thêm 300 triệu đầu tư máy móc hay tuyển thêm người)
+BG_Storage_And_Machinery: Một góc xưởng kết hợp kho hàng, nơi có các thùng nguyên vật liệu (vải, chỉ) cạnh những chiếc máy may mới mua.
+Chapter 6
+Tiền công (Anh Nam thắc mắc về tiền lương tại xưởng)
+BG_Break_Room: Góc nghỉ ngơi của công nhân trong xưởng (có bình nước, tủ đồ cá nhân), tạo cảm giác gần gũi để thảo luận về tiền lương.
+Chapter 7
+Tuần hoàn và chu chuyển tư bản (Doanh nghiệp quá tải đơn hàng, tối ưu kho bãi và logistics)
+BG_Warehouse_Logistics: Kho chứa hàng hóa của MINHWEAR đã bắt đầu chuyên nghiệp hơn, có các kệ cao để thùng carton thành phẩm, có xe đẩy hàng.
+Chapter 8
+Bản chất của giá trị thặng dư (Chuẩn bị gọi vốn, trình bày báo cáo tài chính với ông Hoàng)
+BG_Meeting_Room_2: Phòng họp lớn hơn, hiện đại hơn (bảng kính, máy chiếu hiển thị biểu đồ doanh thu tăng trưởng của MINHWEAR).
+Chapter 9
+Kinh tế số (Ứng dụng app MINHWEAR CONNECT, tối ưu AI và giao hàng nhanh)
+BG_Tech_Office_Hub: Văn phòng làm việc hiện đại của MINHWEAR ở năm thứ 3. Thiết kế kính (glassmorphism), có các màn hình hiển thị bản đồ shipper di chuyển trong thành phố, thông số AI và hệ thống vận hành số hóa.
+
+
+📍 CHAPTER 1 (HIẾU) - Nguồn gốc của giá trị thặng dư
+
+Sau một tháng mở xưởng may đầu tiên, Minh tổng kết kết quả kinh doanh: chi phí sản xuất là 180 triệu đồng, doanh thu đạt 230 triệu đồng, mang về 50 triệu đồng lợi nhuận. Nhìn vào những con số, Minh rất vui vì nghĩ rằng mình đã kinh doanh hiệu quả. Thấy vậy, ông Hoàng mỉm cười và hỏi: "Con bán sản phẩm đúng giá thị trường, mua nguyên liệu cũng đúng giá thị trường. Vậy theo con, 50 triệu lợi nhuận này thực sự đến từ đâu?" Câu hỏi khiến Minh chững lại và bắt đầu suy nghĩ về bản chất của lợi nhuận trong hoạt động sản xuất kinh doanh.
+
+Driving Question
+Nếu mọi giao dịch đều diễn ra ngang giá, lợi nhuận được tạo ra bằng cách nào?
+Do bán đắt hơn
+Do mua nguyên liệu rẻ 
+Do quá trình sản xuất tạo ra giá trị mới
+
+Giải thích khái niệm nguồn gốc của giá trị thặng dư.
+Theo học thuyết của Karl Marx, nguồn gốc của giá trị thặng dư không xuất phát từ việc mua rẻ bán đắt hay trao đổi trên thị trường, bởi trong điều kiện mọi hàng hóa đều được mua và bán đúng giá trị thì sẽ không có giá trị mới được tạo ra. Giá trị thặng dư chỉ hình thành trong quá trình sản xuất, khi người lao động sử dụng sức lao động để tạo ra một lượng giá trị lớn hơn giá trị sức lao động mà họ được trả thông qua tiền lương. Phần giá trị mới vượt quá tiền lương này được gọi là giá trị thặng dư và thuộc về nhà tư bản sau khi sản phẩm được bán ra. Vì vậy, trong ví dụ của Minh, dù nguyên liệu và sản phẩm đều được giao dịch theo đúng giá thị trường, khoản lợi nhuận 50 triệu đồng không đến từ hoạt động mua bán mà đến từ phần giá trị mới do người lao động tạo ra vượt quá chi phí tiền lương, đây chính là nguồn gốc của giá trị thặng dư. 
+
+Quiz (5 câu).
+Câu 1. Theo Karl Marx, nguồn gốc duy nhất tạo ra giá trị thặng dư (m) trong quá trình sản
+xuất tư bản chủ nghĩa là gì?
+A. Hao mòn tự nhiên và giá trị của máy móc, thiết bị kỹ thuật hiện đại.
+B. Sự chênh lệch do việc mua rẻ bán đắt các loại hàng hóa trên thị trường.
+C. Hao phí lao động thặng dư (lao động không công) của công nhân làm thuê.
+D. Tài năng tổ chức quản lý và mức độ chấp nhận rủi ro của nhà tư bản.
+
+Giải thích: Máy móc hay nguyên vật liệu chỉ dịch chuyển giá trị sẵn có của chúng vào sản
+phẩm mới (tư bản bất biến), lưu thông không tạo ra giá trị mới. Chỉ có hao phí lao động sống
+của công nhân ngoài phần bù đắp tiền lương (tức là thời gian lao động thặng dư) mới trực tiếp
+tạo ra giá trị mới lớn hơn, đây chính là nguồn gốc của giá trị thặng dư.
+
+Câu 2. Điểm mấu chốt để tiền tệ (T) có thể chuyển hóa thành tư bản là nhà tư bản phải tìm
+thấy loại hàng hóa đặc biệt nào trên thị trường?
+A. Tư liệu tiêu dùng chất lượng cao để phục vụ đời sống của giới chủ.
+B. Hàng hóa sức lao động, vì khi tiêu dùng nó tạo ra giá trị mới lớn hơn giá trị bản thân nó.
+C. Các loại máy móc hiện đại nhất có công suất hoạt động không ngừng nghỉ.
+D. Nguyên nhiên vật liệu khan hiếm để đảm bảo thế độc quyền sản xuất.
+
+Giải thích: Tiền chỉ biến thành tư bản khi nó hoạt động trong quỹ đạo sinh ra giá trị thặng dư.
+Sức lao động là hàng hóa đặc biệt duy nhất có giá trị sử dụng là nguồn gốc sinh ra giá trị. Khi
+tiêu dùng sức lao động, nó tạo ra lượng giá trị lớn hơn chi phí mua nó.
+
+Câu 3. Trong một ngày lao động của công nhân làm thuê, khoảng thời gian mà họ tạo ra một
+lượng giá trị tương đương với giá trị sức lao động (tiền lương) của mình được gọi là gì?
+A. Thời gian lao động thặng dư.
+B. Thời gian lao động tất yếu.
+C. Thời gian lao động bổ sung.
+D. Thời gian hao phí lao động xã hội cần thiết.
+
+Giải thích: Ngày lao động của công nhân được chia làm hai phần: (1) Thời gian lao động tất
+yếu để tái sản xuất ra giá trị sức lao động (trả lương); (2) Thời gian lao động thặng dư để tạo
+ra giá trị thặng dư cho nhà tư bản chiếm đoạt.
+
+Câu 4. Phương pháp sản xuất giá trị thặng dư bằng cách rút ngắn thời gian lao động tất yếu
+dựa trên cơ sở tăng năng suất lao động xã hội được gọi là phương pháp nào?
+A. Sản xuất giá trị thặng dư tuyệt đối.
+B. Sản xuất giá trị thặng dư tương đối.
+C. Sản xuất giá trị thặng dư siêu ngạch.
+D. Tích lũy và tập trung tư bản hóa thặng dư.
+Giải thích: Phương pháp sản xuất giá trị thặng dư tương đối rút ngắn thời gian lao động tất
+yếu bằng cách tăng năng suất lao động xã hội, từ đó hạ thấp giá trị tư liệu sinh hoạt và giảm
+giá trị sức lao động, dẫn tới tăng thời gian lao động thặng dư khi độ dài ngày lao động không
+đổi.
+
+Câu 5. Bản chất kinh tế của mối quan hệ sản xuất tư bản chủ nghĩa thể hiện qua việc chiếm
+đoạt giá trị thặng dư là gì?
+A. Sự hợp tác bình đẳng, cùng có lợi giữa người sở hữu vốn và người sở hữu sức lao động.
+B. Sự bóc lột của giai cấp tư sản đối với lao động không công của giai cấp công nhân làm thuê.
+C. Sự chia sẻ rủi ro tài chính công bằng giữa chủ doanh nghiệp và tập thể người lao động.
+D. Sự hỗ trợ của nhà tư bản giúp người công nhân nâng cao tay nghề và năng suất lao động.
+
+Giải thích: Phương pháp sản xuất giá trị thặng dư tương đối rút ngắn thời gian lao động tất
+yếu bằng cách tăng năng suất lao động xã hội, từ đó hạ thấp giá trị tư liệu sinh hoạt và giảm
+giá trị sức lao động, dẫn tới tăng thời gian lao động thặng dư khi độ dài ngày lao động không
+đổi.
+
+CHAPTER 2
+📍 CHAPTER 2 (HÀ TRANG) - Công thức chung của tư bản
+Thương hiệu MINHWEAR dần được nhiều khách hàng biết đến. Sau khi trừ toàn bộ chi phí, Minh tích lũy được 500 triệu đồng. Cầm số tiền trong tay, Minh rất hào hứng vì đây là thành quả đầu tiên sau những ngày khởi nghiệp đầy khó khăn.
+Trong buổi họp cuối tháng, Minh chia sẻ với ông Hoàng và Lan:
+Minh: "Cuối cùng mình cũng có 500 triệu. Có lẽ gửi ngân hàng để lấy lãi sẽ an toàn hơn."
+Ông Hoàng mỉm cười rồi hỏi:
+"Nếu con chỉ gửi ngân hàng hoặc mua vàng thì số tiền đó vẫn chỉ là tiền. Theo con, khi nào tiền mới thực sự trở thành tư bản?"
+Minh suy nghĩ. Nếu chỉ giữ tiền hoặc cất vàng thì tài sản có thể tăng lên nhờ lãi suất hoặc biến động giá, nhưng doanh nghiệp sẽ không phát triển. Trong khi đó, nếu dùng số tiền này để mua máy móc, nguyên liệu và thuê thêm lao động, doanh nghiệp có thể sản xuất nhiều hàng hóa hơn và tạo ra nhiều lợi nhuận hơn.
+Ông Hoàng tiếp tục nói:
+"Không phải cứ có nhiều tiền thì gọi là tư bản. Điều quan trọng là tiền phải được đưa vào sản xuất để tạo ra giá trị lớn hơn ban đầu."
+Đây cũng chính là lúc Minh bắt đầu hiểu rằng tiền chỉ trở thành tư bản khi nó vận động theo một quy trình đặc biệt.
+Driving Question
+Theo bạn, điều gì khiến tiền trở thành tư bản?
+Người chơi lựa chọn:
+🔘 A. Gửi ngân hàng để nhận lãi suất.
+🔘 B. Mua vàng và chờ tăng giá.
+🔘 C. Dùng tiền mua máy móc, nguyên vật liệu và thuê lao động để sản xuất hàng hóa. ✅
+
+Giải thích lý thuyết
+Theo Karl Marx, tiền không tự động trở thành tư bản chỉ vì có giá trị lớn hay được tích lũy nhiều. Tiền chỉ trở thành tư bản khi được sử dụng để mua tư liệu sản xuất (máy móc, nguyên vật liệu) và sức lao động, sau đó đưa vào quá trình sản xuất nhằm tạo ra một lượng giá trị lớn hơn số tiền ban đầu.
+Quá trình vận động đó được biểu diễn bằng công thức chung của tư bản:
+M → C … P … C' → M'
+Trong đó:
+M (Money): Tiền ban đầu.
+C (Commodity): Hàng hóa được mua vào, bao gồm tư liệu sản xuất và sức lao động.
+P (Production): Quá trình sản xuất.
+C' (Commodity Prime): Hàng hóa mới có giá trị lớn hơn ban đầu.
+M' (Money Prime): Số tiền thu được sau khi bán hàng hóa.
+Điểm khác biệt quan trọng của công thức này là:
+M' > M
+Khoản chênh lệch giữa M' và M chính là giá trị thặng dư, được tạo ra trong quá trình sản xuất nhờ sức lao động của người công nhân.
+Trong câu chuyện của Minh, nếu Minh chỉ gửi ngân hàng hoặc mua vàng thì số tiền vẫn chỉ là tài sản tài chính. Ngược lại, khi Minh dùng 500 triệu đồng để đầu tư máy móc, nguyên liệu và thuê công nhân sản xuất áo MINHWEAR, doanh nghiệp tạo ra nhiều hàng hóa hơn, bán được nhiều hơn và thu về 650 triệu đồng. Lúc này, số tiền ban đầu đã vận động theo công thức chung của tư bản, biến tiền thành tư bản.
+Kiến thức ghi nhớ
+📌 Tiền ≠ Tư bản
+Tiền chỉ trở thành tư bản khi:
+✅ Được đầu tư vào sản xuất.
+✅ Có sự kết hợp giữa tư liệu sản xuất và sức lao động.
+✅ Tạo ra giá trị lớn hơn số tiền ban đầu.
+📝 Quiz (5 câu)
+Câu 1
+Theo Karl Marx, công thức chung của tư bản là gì?
+A. H – T – H
+B. T – H – T' ✅
+C. H – H – T
+D. T – H – H
+Giải thích: Công thức chung của tư bản phản ánh mục đích của nhà tư bản là dùng tiền để tạo ra số tiền lớn hơn ban đầu (T').
+Câu 2
+Điều kiện nào làm cho tiền trở thành tư bản?
+A. Có giá trị lớn.
+B. Được cất giữ trong ngân hàng.
+C. Được sử dụng để mua sức lao động và tư liệu sản xuất nhằm tạo ra giá trị mới. ✅
+D. Được đổi sang ngoại tệ.
+Giải thích: Tiền chỉ trở thành tư bản khi tham gia vào quá trình sản xuất và tạo ra giá trị thặng dư.
+Câu 3
+Trong công thức M → C … P … C' → M', ký hiệu P đại diện cho điều gì?
+A. Giá bán sản phẩm.
+B. Quá trình sản xuất. ✅
+C. Thị trường.
+D. Lợi nhuận.
+Giải thích: Đây là giai đoạn kết hợp tư liệu sản xuất và sức lao động để tạo ra hàng hóa mới có giá trị lớn hơn.
+Câu 4
+Điểm khác biệt giữa M và M' là gì?
+A. Không có sự khác biệt.
+B. M' nhỏ hơn M.
+C. M' lớn hơn M vì có thêm giá trị thặng dư. ✅
+D. M' chỉ là tiền đổi sang ngoại tệ.
+Giải thích: Mục tiêu của nhà tư bản là làm cho số tiền ban đầu tăng lên sau quá trình sản xuất.
+Câu 5
+Trong ví dụ của Minh, yếu tố nào quyết định việc 500 triệu đồng trở thành tư bản?
+A. Minh gửi tiết kiệm.
+B. Minh mua vàng.
+C. Minh đầu tư mua máy móc, nguyên liệu và thuê công nhân để sản xuất hàng hóa. ✅
+D. Minh giữ tiền trong két sắt.
+Giải thích: Khi tiền được đưa vào quá trình sản xuất nhằm tạo ra giá trị mới, nó đã vận động theo công thức chung của tư bản và trở thành tư bản.
+
+CHAPTER 3
+📍 CHAPTER 3 (TRANG THÙY) - Hàng hóa sức lao động
+
+MINHWEAR bắt đầu có nhiều đơn hàng hơn. Để kịp tiến độ sản xuất, Minh quyết định tuyển thêm 20 công nhân may.
+Trong buổi phỏng vấn đầu tiên, Minh gặp rất nhiều ứng viên có tay nghề tốt. Sau khi ký hợp đồng lao động, Minh vui vẻ nói:
+"Cuối cùng mình cũng đã mua đủ lao động để mở rộng sản xuất."
+Nghe vậy, ông Hoàng mỉm cười và hỏi:
+"Con nghĩ doanh nghiệp đang mua lao động của họ hay chỉ mua sức lao động của họ?"
+Minh hơi bối rối.
+Anh Nam – một công nhân mới được tuyển – lên tiếng:
+"Sau khi vào làm, em mới là người trực tiếp lao động để tạo ra sản phẩm. Nhưng trước khi bắt đầu làm việc, doanh nghiệp chỉ ký hợp đồng thuê em làm việc trong 8 giờ mỗi ngày."
+Ông Hoàng tiếp tục giải thích:
+"Điều doanh nghiệp mua không phải là lao động đã được tạo ra, mà là khả năng lao động của người công nhân trong một khoảng thời gian nhất định."
+Minh bắt đầu nhận ra giữa lao động và sức lao động không hoàn toàn giống nhau.
+Driving Question
+Theo bạn, doanh nghiệp thực sự mua điều gì khi ký hợp đồng với người lao động?
+Người chơi lựa chọn
+A. Mua lao động của người công nhân.
+B. Mua sức lao động của người công nhân. ✅
+C. Mua thời gian làm việc của người công nhân.
+Giải thích lý thuyết
+Theo Karl Marx, điều mà nhà tư bản mua trên thị trường không phải là lao động, mà là hàng hóa sức lao động.
+Sức lao động là toàn bộ năng lực thể chất và trí tuệ tồn tại trong con người, có khả năng được sử dụng để tạo ra của cải vật chất và dịch vụ.
+Khi ký hợp đồng lao động, doanh nghiệp chỉ mua quyền sử dụng sức lao động của người công nhân trong một khoảng thời gian nhất định (ví dụ 8 giờ mỗi ngày). Sau khi quá trình sản xuất bắt đầu, người công nhân mới thực hiện lao động, tức là sử dụng sức lao động để tạo ra sản phẩm và giá trị mới.
+Điểm đặc biệt của sức lao động là:
+Nhà tư bản trả tiền để mua sức lao động thông qua tiền lương.
+Khi được sử dụng trong sản xuất, sức lao động có khả năng tạo ra lượng giá trị lớn hơn giá trị của chính nó.
+Chính đặc điểm này làm cho sức lao động trở thành hàng hóa đặc biệt, là nguồn gốc trực tiếp tạo ra giá trị thặng dư.
+💡 Kiến thức ghi nhớ
+📌 Lao động ≠ Sức lao động
+Sức lao động
+Là khả năng lao động của con người.
+Được mua bán trên thị trường lao động.
+Có giá cả biểu hiện bằng tiền lương.
+Là một loại hàng hóa đặc biệt.
+↓
+Lao động
+Là quá trình người lao động sử dụng sức lao động để sản xuất.
+Diễn ra trong nhà máy hoặc nơi làm việc.
+Tạo ra giá trị mới và giá trị thặng dư.
+
+📌 Vì sao sức lao động là hàng hóa đặc biệt?
+✅ Có giá trị (được biểu hiện bằng tiền lương).
+✅ Có giá trị sử dụng đặc biệt là tạo ra giá trị mới.
+✅ Có thể tạo ra lượng giá trị lớn hơn giá trị của bản thân nó.
+➡ Đây chính là cơ sở hình thành giá trị thặng dư.
+
+📝 Quiz (5 câu)
+Câu 1
+Theo Karl Marx, khi tuyển dụng công nhân, doanh nghiệp thực sự mua điều gì?
+A. Lao động.
+B. Sức lao động. ✅
+C. Giá trị sản phẩm.
+D. Thời gian nghỉ ngơi.
+Giải thích: Nhà tư bản không thể mua lao động vì lao động chỉ xuất hiện trong quá trình sản xuất. Điều được mua là sức lao động – khả năng lao động của người công nhân.
+
+Câu 2
+Vì sao sức lao động được xem là hàng hóa đặc biệt?
+A. Vì nó không có giá trị.
+B. Vì khi được sử dụng, nó có khả năng tạo ra giá trị mới lớn hơn giá trị của bản thân nó. ✅
+C. Vì nó không cần trả tiền lương.
+D. Vì nó không tham gia sản xuất.
+Giải thích: Sức lao động là hàng hóa duy nhất có giá trị sử dụng đặc biệt là tạo ra giá trị mới lớn hơn giá trị sức lao động.
+
+Câu 3
+Điều nào sau đây phân biệt đúng giữa lao động và sức lao động?
+A. Hai khái niệm hoàn toàn giống nhau.
+B. Lao động là hàng hóa được mua bán trên thị trường.
+C. Sức lao động là khả năng lao động, còn lao động là quá trình sử dụng khả năng đó để tạo ra sản phẩm. ✅
+D. Lao động tồn tại trước khi người công nhân làm việc.
+Giải thích: Sức lao động tồn tại trước khi làm việc và được nhà tư bản mua; lao động chỉ xuất hiện khi sức lao động được sử dụng trong sản xuất.
+
+Câu 4
+Tiền lương mà doanh nghiệp trả cho người lao động là giá cả của:
+A. Toàn bộ giá trị sản phẩm.
+B. Giá trị thặng dư.
+C. Hàng hóa sức lao động. ✅
+D. Máy móc sản xuất.
+Giải thích: Tiền lương là hình thức biểu hiện bằng tiền của giá trị sức lao động, không phải toàn bộ giá trị mà người lao động tạo ra.
+
+Câu 5
+Trong ví dụ của Minh tuyển thêm 20 công nhân, yếu tố nào là nguồn gốc trực tiếp tạo ra giá trị mới cho doanh nghiệp?
+A. Máy may công nghiệp.
+B. Nhà xưởng.
+C. Nguyên vật liệu.
+D. Sức lao động của người công nhân khi được sử dụng trong sản xuất. ✅
+Giải thích: Máy móc và nguyên vật liệu chỉ chuyển giá trị sẵn có của chúng vào sản phẩm. Chỉ có sức lao động khi được sử dụng mới tạo ra giá trị mới và là cơ sở hình thành giá trị thặng dư.
+CHAPTER 4
+📍 CHAPTER 4 (QUỲNH) - Sự sản xuất giá trị thặng dư
+Story
+MINHWEAR bắt đầu mở rộng sản xuất, Minh theo dõi quá trình làm việc của anh Nam công nhân trong xưởng. Mỗi ngày, anh Nam làm việc 8 giờ và nhận 500.000 đồng tiền lương. Sau 4 giờ làm việc đầu tiên, anh Nam đã tạo ra một lượng giá trị tương đương với 500.000 đồng tiền lương của mình. Tuy nhiên, anh Nam vẫn tiếp tục làm việc thêm 4 giờ còn lại theo thời gian làm việc đã thỏa thuận. Trong 4 giờ này, anh Nam công nhân tiếp tục tạo ra giá trị mới cho doanh nghiệp nhưng không nhận thêm tiền công tương ứng. Minh bắt đầu đặt câu hỏi: “Nếu 4 giờ đầu tiên đã đủ để tạo ra giá trị tương đương với tiền lương, vậy giá trị được tạo ra trong 4 giờ còn lại thực sự thuộc về ai?”
+Driving Question
+4 giờ làm việc còn lại của người công nhân tạo ra điều gì?
+Tạo ra giá trị để bù đắp tiền lươngTạo ra giá trị thặng dư cho nhà tư bảnKhông tạo ra thêm giá trị nào
+Website mô phỏng: 4 giờ đầu → Lao động tất yếu 4 giờ sau → Lao động thặng dư
+Giải thích khái niệm sự sản xuất giá trị thặng dư.
+Theo Karl Marx, trong một ngày lao động, thời gian làm việc của người công nhân được chia thành thời gian lao động tất yếu và thời gian lao động thặng dư. Thời gian lao động tất yếu là khoảng thời gian người lao động tạo ra một lượng giá trị tương đương với giá trị sức lao động của mình, được biểu hiện thông qua tiền lương. Sau khi đã tạo ra đủ giá trị để bù đắp tiền lương, người công nhân vẫn tiếp tục làm việc trong thời gian lao động thặng dư. Trong khoảng thời gian này, người lao động tiếp tục tạo ra giá trị mới nhưng không được trả thêm tương ứng với toàn bộ giá trị đã tạo ra. Phần giá trị vượt quá giá trị sức lao động được gọi là giá trị thặng dư và bị nhà tư bản chiếm đoạt. Vì vậy, trong ví dụ của Minh, 4 giờ đầu tiên là thời gian lao động tất yếu, còn 4 giờ tiếp theo là thời gian lao động thặng dư, tạo ra giá trị thặng dư cho doanh nghiệp.
+Quiz (5 câu).
+Câu 1. Trong một ngày lao động của công nhân làm thuê, khoảng thời gian mà họ tạo ra một lượng giá trị tương đương với giá trị sức lao động của mình được gọi là gì?
+A. Thời gian lao động thặng dư. B. Thời gian lao động tất yếu. C. Thời gian lao động bổ sung. D. Thời gian lưu thông.
+Giải thích: Thời gian lao động tất yếu là khoảng thời gian người công nhân tạo ra một lượng giá trị tương đương với giá trị sức lao động của mình, được biểu hiện thông qua tiền lương.
+Câu 2. Khoảng thời gian người công nhân tiếp tục làm việc sau khi đã tạo ra đủ giá trị tương đương với tiền lương được gọi là gì?
+A. Thời gian lao động tất yếu. B. Thời gian lao động thặng dư. C. Thời gian lao động cá nhân. D. Thời gian lao động xã hội cần thiết.
+Giải thích: Sau khi hoàn thành thời gian lao động tất yếu, người công nhân vẫn tiếp tục làm việc. Khoảng thời gian này được gọi là thời gian lao động thặng dư và là thời gian tạo ra giá trị thặng dư cho nhà tư bản.
+Câu 3. Nếu một công nhân làm việc 8 giờ, trong đó có 4 giờ lao động tất yếu và 4 giờ lao động thặng dư, tỷ suất giá trị thặng dư là bao nhiêu?
+A. 25%. B. 50%. C. 100%. D. 200%.
+Giải thích: Tỷ suất giá trị thặng dư được tính bằng tỷ lệ giữa thời gian lao động thặng dư và thời gian lao động tất yếu. Trong trường hợp này: 4 giờ / 4 giờ × 100% = 100%.
+Câu 4. Giá trị thặng dư được tạo ra trong khoảng thời gian nào?
+A. Thời gian lao động tất yếu. B. Thời gian lao động thặng dư. C. Thời gian nghỉ ngơi. D. Thời gian lưu thông hàng hóa.
+Giải thích: Trong thời gian lao động thặng dư, người công nhân tiếp tục tạo ra giá trị mới sau khi đã tạo ra đủ giá trị để bù đắp tiền lương. Phần giá trị vượt quá giá trị sức lao động này chính là giá trị thặng dư.
+Câu 5. Bản chất của sự sản xuất giá trị thặng dư là gì?
+A. Người lao động tạo ra giá trị đúng bằng tiền lương nhận được. B. Người lao động tạo ra giá trị lớn hơn giá trị sức lao động của mình. C. Máy móc tự động tạo ra toàn bộ giá trị thặng dư. D. Nhà tư bản tạo ra giá trị thặng dư thông qua hoạt động mua bán.
+Giải thích: Người lao động tạo ra một lượng giá trị lớn hơn giá trị sức lao động mà họ được trả thông qua tiền lương. Phần giá trị vượt quá này trở thành giá trị thặng dư và thuộc về nhà tư bản.
+CHAPTER 5
+📍 CHAPTER 5 (THU) - Tư bản bất biến và tư bản khả biến
+Story
+Khi MINHWEAR bắt đầu có lợi nhuận, Minh có thêm 300 triệu đồng để đầu tư mở rộng sản xuất. Minh đang đứng trước hai lựa chọn: dùng số tiền này để mua thêm máy móc hiện đại nhằm tăng năng suất sản xuất hoặc tuyển thêm công nhân để tăng số lượng lao động trong xưởng. Trong buổi trao đổi về kế hoạch đầu tư, ông Hoàng hỏi Minh: “Theo Minh, máy móc hay người lao động mới là yếu tố trực tiếp tạo ra giá trị mới trong quá trình sản xuất?” Câu hỏi khiến Minh bắt đầu suy nghĩ về vai trò khác nhau của máy móc và sức lao động trong việc tạo ra giá trị thặng dư.
+Driving Question
+Nên mua thêm máy móc hay tuyển thêm lao động để tạo nhiều giá trị mới hơn?
+Mua thêm máy móc Tuyển thêm lao động Mua thêm nguyên vật liệu
+Website phân tích: Máy móc → Chuyển giá trị có sẵn vào sản phẩm Lao động → Tạo ra giá trị mới
+Giải thích khái niệm tư bản bất biến và tư bản khả biến.
+Theo Karl Marx, tư bản được chia thành tư bản bất biến và tư bản khả biến dựa trên vai trò của chúng trong quá trình tạo ra giá trị. Tư bản bất biến bao gồm máy móc, nhà xưởng và nguyên vật liệu. Những yếu tố này không tạo ra giá trị mới mà chỉ chuyển giá trị vốn có của chúng vào sản phẩm trong quá trình sản xuất. Tư bản khả biến là phần tư bản được dùng để mua sức lao động, thường biểu hiện dưới hình thức tiền lương. Sức lao động là một hàng hóa đặc biệt vì khi được sử dụng, nó có thể tạo ra một lượng giá trị mới lớn hơn giá trị mà nhà tư bản đã bỏ ra để mua nó. Vì vậy, máy móc và nguyên vật liệu chỉ chuyển giá trị có sẵn, còn lao động sống của người công nhân mới là nguồn gốc trực tiếp tạo ra giá trị mới và giá trị thặng dư.
+Quiz (5 câu).
+Câu 1. Tư bản bất biến bao gồm những yếu tố nào?
+A. Sức lao động và tiền lương. B. Máy móc, nhà xưởng và nguyên vật liệu. C. Giá trị thặng dư và lợi nhuận. D. Người lao động và thời gian lao động.
+Giải thích: Tư bản bất biến tồn tại dưới hình thức tư liệu sản xuất như máy móc, nhà xưởng và nguyên vật liệu. Trong quá trình sản xuất, chúng không tạo ra giá trị mới mà chỉ chuyển giá trị vốn có vào sản phẩm.
+Câu 2. Tư bản khả biến là phần tư bản được dùng để mua:
+A. Máy móc và nhà xưởng. B. Nguyên vật liệu. C. Sức lao động của người công nhân. D. Hàng hóa tiêu dùng.
+Giải thích: Tư bản khả biến được dùng để mua sức lao động. Đây là loại tư bản có khả năng tạo ra giá trị mới lớn hơn giá trị ban đầu mà nhà tư bản đã bỏ ra để mua nó.
+Câu 3. Yếu tố nào trực tiếp tạo ra giá trị mới trong quá trình sản xuất?
+A. Máy móc. B. Nguyên vật liệu. C. Lao động sống của người công nhân. D. Nhà xưởng.
+Giải thích: Theo Karl Marx, lao động sống của người công nhân là nguồn gốc tạo ra giá trị mới. Máy móc, nguyên vật liệu và nhà xưởng chỉ chuyển giá trị sẵn có của chúng vào sản phẩm.
+Câu 4. Một doanh nghiệp trả 500.000 đồng tiền lương cho một công nhân mỗi ngày. Người công nhân tạo ra 1.200.000 đồng giá trị trong ngày đó. Phần chênh lệch 700.000 đồng là cơ sở hình thành:
+A. Tư bản bất biến. B. Giá trị thặng dư. C. Chi phí nguyên vật liệu. D. Giá trị hao mòn máy móc.
+Giải thích: Sức lao động có khả năng tạo ra giá trị lớn hơn giá trị của bản thân nó. Phần giá trị do người công nhân tạo ra vượt quá tiền lương được trả là cơ sở hình thành giá trị thặng dư.
+Câu 5. Nhận định nào sau đây đúng về máy móc và lao động?
+A. Máy móc tự tạo ra giá trị mới. B. Máy móc không có vai trò trong quá trình sản xuất. C. Máy móc chuyển giá trị của mình vào sản phẩm, còn lao động sống tạo ra giá trị mới. D. Máy móc và lao động tạo ra giá trị mới theo cùng một cách.
+Giải thích: Máy móc có vai trò quan trọng trong việc hỗ trợ sản xuất và nâng cao năng suất lao động, nhưng bản thân nó không tạo ra giá trị mới. Lao động sống của người công nhân mới là yếu tố trực tiếp tạo ra giá trị mới và giá trị thặng dư.
+CHAPTER 6
+📍 CHAPTER 6 (PHƯƠNG) - Tiền công
+Story
+MINHWEAR bắt đầu mở rộng quy mô sản xuất, một công nhân tên Nam bắt đầu thắc mắc về tiền lương của mình. Mỗi ngày, anh Nam làm việc 8 giờ và tạo ra sản phẩm có tổng giá trị khoảng 1,2 triệu đồng. Tuy nhiên, tiền lương mà anh Nam nhận được chỉ là 500.000 đồng mỗi ngày. Trong buổi trao đổi với Minh, anh Nam hỏi: “Tôi tạo ra 1,2 triệu đồng giá trị mỗi ngày nhưng chỉ nhận 500.000 đồng tiền lương. Vì sao?” Câu hỏi khiến Minh nhận ra rằng tiền công không đơn giản là khoản tiền trả cho toàn bộ giá trị mà người lao động tạo ra.
+Driving Question
+Tiền công thực sự là giá của điều gì?
+Giá của toàn bộ giá trị sản phẩm Giá của sức lao động Giá của lợi nhuận doanh nghiệp
+Website giải thích: Sức lao động → Tạo ra giá trị mới Tiền công → Giá cả của sức lao động Giá trị tạo ra lớn hơn tiền công → Giá trị thặng dư
+Giải thích khái niệm tiền công.
+Theo Karl Marx, tiền công về bản chất là giá cả của hàng hóa sức lao động, chứ không phải giá của toàn bộ giá trị mà người lao động tạo ra. Người lao động bán sức lao động của mình cho nhà tư bản trong một khoảng thời gian nhất định và nhận lại tiền công. Trong quá trình sản xuất, sức lao động có thể tạo ra một lượng giá trị lớn hơn giá trị của bản thân nó. Ví dụ, một công nhân nhận 500.000 đồng tiền lương nhưng tạo ra 1,2 triệu đồng giá trị trong một ngày. Phần giá trị vượt quá tiền lương này chính là cơ sở hình thành giá trị thặng dư. Vì vậy, tiền công không phản ánh toàn bộ giá trị mà người lao động tạo ra mà chỉ là giá cả của sức lao động.
+Quiz (5 câu).
+Câu 1. Theo Karl Marx, tiền công về bản chất là giá cả của:
+A. Toàn bộ giá trị sản phẩm. B. Sức lao động. C. Lợi nhuận của nhà tư bản. D. Máy móc và nguyên vật liệu.
+Giải thích: Người lao động bán sức lao động của mình cho nhà tư bản trong một khoảng thời gian nhất định. Vì vậy, tiền công về bản chất là giá cả của hàng hóa sức lao động.
+Câu 2. Vì sao tiền công có thể che giấu bản chất của quan hệ sản xuất tư bản chủ nghĩa?
+A. Vì người lao động không nhận được tiền lương. B. Vì tiền công khiến người lao động có cảm giác rằng toàn bộ lao động của mình đều được trả công. C. Vì nhà tư bản không sử dụng lao động. D. Vì tiền công luôn bằng giá trị sản phẩm.
+Giải thích: Tiền công được trả cho toàn bộ ngày lao động nên có thể khiến người lao động cảm thấy rằng toàn bộ lao động của mình đều được trả công. Tuy nhiên, trên thực tế, một phần thời gian lao động tạo ra giá trị thặng dư cho nhà tư bản.
+Câu 3. Một công nhân nhận 500.000 đồng tiền lương nhưng tạo ra 1.200.000 đồng giá trị. Phần chênh lệch 700.000 đồng là:
+ A. Tiền công. B. Chi phí sản xuất C.Giá trị thặng dư  D. Tư bản bất biến
+Giải thích: Người công nhân tạo ra lượng giá trị lớn hơn giá trị sức lao động mà họ được trả thông qua tiền lương. Phần giá trị vượt quá tiền công này chính là giá trị thặng dư.
+Câu 4. Sức lao động là một hàng hóa đặc biệt vì:
+ A. Khi được sử dụng, nó có thể tạo ra giá trị mới lớn hơn giá trị của bản thân nó. B. Nó không có giá trị sử dụng. C. Nó chỉ được sử dụng trong sản xuất công nghiệp. D. Nó không thể mua bán trên thị trường.
+Giải thích: Sức lao động là hàng hóa đặc biệt vì khi được sử dụng trong quá trình sản xuất, nó có thể tạo ra một lượng giá trị lớn hơn giá trị mà nhà tư bản đã bỏ ra để mua nó thông qua tiền công.
+Câu 5. Nhận định nào sau đây đúng về mối quan hệ giữa tiền công và giá trị thặng dư?
+A. Tiền công luôn bằng toàn bộ giá trị mà người lao động tạo ra. B. Giá trị thặng dư chỉ được tạo ra bởi máy móc.
+ C. Tiền công chính là toàn bộ lợi nhuận của doanh nghiệp. D. Giá trị thặng dư được tạo ra từ phần giá trị vượt quá giá trị sức lao động.
+Giải thích: Người lao động tạo ra giá trị mới trong quá trình sản xuất. Một phần giá trị đó được dùng để bù đắp giá trị sức lao động thông qua tiền công, còn phần giá trị vượt quá tiền công trở thành giá trị thặng dư mà nhà tư bản chiếm đoạt.
+
+CHAPTER 7
+📍 CHAPTER 7 (THẢO) - Tuần hoàn và chu chuyển tư bản
+Story
+Khi MINHWEAR ngày càng được nhiều khách hàng biết đến, số lượng đơn hàng tăng nhanh khiến doanh nghiệp liên tục rơi vào tình trạng quá tải. Để đáp ứng nhu cầu của thị trường, Minh phải cân nhắc nhiều phương án như nhập thêm nguyên vật liệu, mở rộng quy mô sản xuất hay đầu tư máy móc nhằm tăng năng suất. Tuy nhiên, Minh nhanh chóng nhận ra rằng dù doanh thu tăng, doanh nghiệp vẫn có thể thiếu vốn nếu dòng tiền không được quay vòng kịp thời. Trong buổi họp, ông Hoàng đặt ra câu hỏi: "Làm thế nào để doanh nghiệp thu được nhiều lợi nhuận hơn trong cùng một năm?" Câu hỏi này khiến Minh hiểu rằng lợi nhuận không chỉ phụ thuộc vào số lượng hàng hóa bán ra mà còn phụ thuộc vào tốc độ chu chuyển của vốn. Nếu doanh nghiệp rút ngắn thời gian sản xuất, lưu thông và thu hồi vốn nhanh hơn, cùng một lượng vốn có thể được sử dụng nhiều lần trong năm, từ đó tạo ra doanh thu và lợi nhuận lớn hơn.
+Driving Question
+Làm thế nào để doanh nghiệp thu được nhiều lợi nhuận hơn trong cùng một năm?
+1.  Đầu tư máy móc để rút ngắn thời gian sản xuất
+Tăng năng suất.
+Hoàn thành đơn hàng nhanh hơn.
+Vốn quay trở lại doanh nghiệp sớm hơn.
+2. Tối ưu quản lý kho và giảm thời gian lưu kho
+Hàng hóa được bán nhanh hơn.
+Giảm vốn bị tồn đọng trong kho.
+Tăng tốc độ chu chuyển vốn.
+3. Cải thiện logistics và giao hàng nhanh
+Khách hàng nhận hàng sớm hơn.
+Doanh nghiệp thu hồi tiền nhanh hơn.
+Rút ngắn thời gian lưu thông của tư bản.
+Giải thích: 
+Giai đoạn thứ nhất - giai đoạn lưu thông đầu vào: T-H 
+Tư bản tồn tại dưới hình thái: tư bản tiền tệ. Chức năng giai đoạn này là: mua các yếu tố cho quá trình sản xuất, chuẩn bị các điều kiện cần thiết để sản xuất ra giá trị thặng dư 
+Kết thúc giai đoạn này: biến tư bản tiền tệ thành tư bản sản xuất
+Giai đoạn thứ hai - giai đoạn sản xuất: H - H’
+Giai đoạn này tư bản tồn tại dưới hình thái: tư bản sản xuất.
+Chức năng: sản xuất ra hàng hóa 
+Kết thúc của giai đoạn thứ hai là: tư bản sản xuất chuyển hóa thành tư bản hàng hóa có kèm theo giá trị thặng dư
+Giai đoạn thứ ba là giai đoạn lưu thông đầu ra: H' - T'
+Trong giai đoạn này tư bản tồn tại dưới hình thái tư bản hàng hóa, chức năng là thực hiện giá trị của khối lượng hàng hóa đã sản xuất ra trong đó đã bao hàm một lượng giá trị thặng dư. Trong giai đoạn này, nhà tư bản trở lại thị trường với tư cách là người bán hàng. Hàng hóa của nhà tư bản được chuyển hóa thành tiền. 
+Kết thúc giai đoạn thứ ba, tư bản hàng hóa chuyển hóa thành tư bản tiền tệ. Đến đây, mục đích của nhà tư bản đã được thực hiện, tư bản quay trở lại hình thái ban đầu trong tay chủ của nó nhưng với số lượng lớn hơn trước. 
+Tuần hoàn của tư bản chỉ có thể tiến hành bình thường trong điều kiện các giai đoạn khác nhau của nó không ngừng được chuyển tiếp. 
+
+Thời gian sản xuất là thời gian tư bản nằm ở trong lĩnh vực sản xuất. Thời gian sản xuất bao gồm: thời gian lao động, thời gian gián đoạn lao động và thời gian dự trữ sản xuất.
+
+Thời gian lưu thông là thời gian tư bản nằm trong lĩnh vực lưu thông. Thời gian lưu thông gồm có thời gian mua và thời gian bán hàng hóa. 
+
+Thời gian chu chuyển của tư bản càng rút ngắn thì càng tạo điều kiện cho giá trị thặng dư được sản xuất ra nhiều hơn, tư bản càng lớn nhanh hơn. 
+
+Website mô phỏng vòng tuần hoàn tư bản.
+Quiz.
+Câu 1. Minh vừa dùng 500 triệu đồng để mua vải, máy may và tuyển công nhân cho MINHWEAR. Doanh nghiệp đang ở giai đoạn nào của tuần hoàn tư bản?
+A. Giai đoạn lưu thông đầu vào (T → H) ✅ B. Giai đoạn sản xuất (H → H') C. Giai đoạn lưu thông đầu ra (H' → T') D. Giai đoạn thu lợi nhuận
+Giải thích: Đây là giai đoạn nhà tư bản dùng tiền để mua tư liệu sản xuất và sức lao động, chuẩn bị cho quá trình sản xuất. 
+Câu 2. Sau khi công nhân hoàn thành các sản phẩm thời trang, MINHWEAR đã tạo ra những chiếc áo có giá trị cao hơn chi phí ban đầu. Đây là giai đoạn nào của tuần hoàn tư bản?
+A. T → H B. H → H' ✅ C. H' → T' D. T' → H
+Giải thích: Đây là giai đoạn sản xuất, nơi tư bản sản xuất tạo ra hàng hóa mới (H') có chứa giá trị thặng dư.
+Câu 3. MINHWEAR đã bán hết sản phẩm trên website và nhận được số tiền lớn hơn số vốn ban đầu. Điều này tương ứng với giai đoạn nào?
+A. T → H B. H → H' C. H' → T' ✅ D. SX → T
+Giải thích: Đây là giai đoạn lưu thông đầu ra, khi hàng hóa được bán và chuyển thành tiền tệ có giá trị lớn hơn ban đầu (T').
+Câu 4. Để doanh nghiệp thu được nhiều lợi nhuận hơn trong cùng một năm, Minh nên ưu tiên làm gì?
+A. Kéo dài thời gian lưu kho hàng hóa. B. Rút ngắn thời gian sản xuất và thời gian lưu thông. ✅ C. Chỉ tăng giá bán sản phẩm. D. Giảm số lượng đơn hàng.
+Giải thích: Theo lý thuyết chu chuyển tư bản, giảm thời gian sản xuất và thời gian lưu thông sẽ làm tăng tốc độ chu chuyển của tư bản, từ đó giúp tạo ra nhiều giá trị thặng dư hơn trong một năm.
+Câu 5. Đơn hàng của MINHWEAR tăng mạnh nhưng nhiều sản phẩm phải lưu kho lâu trước khi đến tay khách hàng. Minh nên ưu tiên giải pháp nào để tăng tốc độ chu chuyển của tư bản?
+A. Giữ hàng trong kho đến khi giá bán tăng.
+B. Đầu tư thêm kho chứa để tích trữ nhiều hàng hơn.
+C. Tối ưu quy trình giao hàng và bán hàng để rút ngắn thời gian lưu thông. ✅
+D. Giảm số lượng đơn hàng nhận mỗi tháng.
+Giải thích: Rút ngắn thời gian lưu thông giúp doanh nghiệp thu hồi vốn nhanh hơn, từ đó quay vòng vốn nhiều lần trong năm và nâng cao lợi nhuận.
+CHAPTER 8
+📍 CHAPTER 8 (THẢO) - Bản chất của giá trị thặng dư
+
+Story
+MINHWEAR đạt được nhiều thành công và đang chuẩn bị gọi vốn để mở rộng quy mô sản xuất. Trước buổi gặp gỡ các nhà đầu tư, ông Hoàng yêu cầu Minh chuẩn bị phần thuyết trình về hiệu quả kinh doanh của doanh nghiệp.
+Sau khi xem báo cáo tài chính, ông Hoàng hỏi Minh: "Doanh thu của MINHWEAR tăng, lợi nhuận cũng tăng. Nhưng em có thể giải thích cho các nhà đầu tư biết lợi nhuận của doanh nghiệp thực sự đến từ đâu không?"
+Minh trả lời rằng lợi nhuận là phần chênh lệch giữa doanh thu và chi phí. Ông Hoàng mỉm cười và tiếp tục đặt câu hỏi: "Nếu tất cả nguyên vật liệu đều được mua theo giá thị trường, sản phẩm cũng được bán theo giá thị trường, vậy giá trị tăng thêm của doanh nghiệp được tạo ra ở đâu?"
+Câu hỏi khiến Minh bối rối. Người chơi sẽ cùng Minh phân tích quá trình sản xuất của MINHWEAR, từ đó khám phá nguồn gốc và bản chất của giá trị thặng dư theo học thuyết của Karl Marx.
+Driving Question
+Bản chất của giá trị thặng dư là gì?
+1. Bản chất của giá trị thặng dư (m)
+Giá trị thặng dư (m) là phần giá trị mới do người lao động tạo ra nhưng không được trả công, mà bị nhà tư bản chiếm đoạt.
+Đây là đặc trưng của phương thức sản xuất tư bản chủ nghĩa.
+Về bản chất kinh tế - xã hội, giá trị thặng dư phản ánh mối quan hệ giữa giai cấp tư sản và giai cấp công nhân.
+Theo Karl Marx, sự chiếm đoạt này không diễn ra bằng cưỡng ép, mà thông qua quan hệ mua bán sức lao động theo quy luật giá trị.
+2. Tỷ suất giá trị thặng dư (m')
+Khái niệm
+Là tỷ lệ giữa giá trị thặng dư (m) và tư bản khả biến (v).
+Phản ánh mức độ bóc lột sức lao động của nhà tư bản.
+Công thức
+m' = (m / v) × 100%
+Hoặc
+m' = (t' / t) × 100%
+Trong đó:
+m: Giá trị thặng dư.
+v: Tư bản khả biến (tiền lương).
+t': Thời gian lao động thặng dư.
+t: Thời gian lao động tất yếu.
+Ý nghĩa
+Tỷ suất giá trị thặng dư càng cao thì mức độ bóc lột lao động càng lớn.
+Muốn tăng tỷ suất giá trị thặng dư, nhà tư bản có thể:
+Kéo dài ngày lao động.
+Tăng cường độ lao động.
+Nâng cao năng suất lao động.
+3. Khối lượng giá trị thặng dư (M)
+Khái niệm
+Là tổng số giá trị thặng dư mà nhà tư bản thu được trong một thời kỳ nhất định.
+Công thức
+M = m' × V
+Trong đó:
+M: Khối lượng giá trị thặng dư.
+m': Tỷ suất giá trị thặng dư.
+V: Tổng tư bản khả biến.
+Ý nghĩa
+Phản ánh quy mô tuyệt đối của giá trị thặng dư mà doanh nghiệp thu được.
+Khối lượng giá trị thặng dư phụ thuộc vào:
+Tỷ suất giá trị thặng dư (m').
+Quy mô tư bản khả biến (V).
+Muốn tăng khối lượng giá trị thặng dư, doanh nghiệp có thể:
+Nâng cao tỷ suất giá trị thặng dư.
+Mở rộng quy mô sản xuất, sử dụng nhiều lao động hơn.
+Quiz.
+Câu 1. Nhà đầu tư đặt câu hỏi
+Ông Hoàng hỏi Minh:
+"Theo em, lợi nhuận của MINHWEAR thực sự được tạo ra từ đâu?"
+A. Do doanh nghiệp luôn bán sản phẩm cao hơn giá trị của chúng.
+B. Do phần lao động không được trả công của người lao động tạo ra giá trị thặng dư. ✅
+C. Do máy móc tự tạo ra giá trị mới.
+D. Do nguyên vật liệu tự tăng giá trị trong quá trình sản xuất.
+Giải thích: Theo Karl Marx, giá trị thặng dư là phần giá trị mới do người lao động tạo ra nhưng không được trả công và bị nhà tư bản chiếm đoạt.
+Câu 2. Anh Nam thắc mắc
+Anh Nam nói:
+"Mỗi ngày tôi tạo ra giá trị lớn hơn nhiều so với tiền lương mình nhận được. Phần giá trị còn lại thuộc về ai?"
+A. Thuộc về khách hàng.
+B. Thuộc về Nhà nước.
+C. Thuộc về nhà tư bản dưới dạng giá trị thặng dư. ✅
+D. Không thuộc về ai.
+Giải thích: Phần giá trị mới vượt quá giá trị sức lao động trở thành giá trị thặng dư mà nhà tư bản thu được.
+Câu 3. Tỷ suất giá trị thặng dư phản ánh điều gì?
+A. Quy mô của doanh nghiệp.
+B. Trình độ bóc lột sức lao động của nhà tư bản. ✅
+C. Mức độ hiện đại của máy móc.
+D. Khả năng cạnh tranh của doanh nghiệp.
+Giải thích: Tỷ suất giá trị thặng dư (m') phản ánh mức độ chiếm đoạt lao động không công của người lao động.
+Câu 4. Theo công thức của Marx, tỷ suất giá trị thặng dư được tính bằng:
+A. m' = m/v × 100% ✅
+B. m' = v/m × 100%
+C. m' = m + v
+D. m' = T − C
+Giải thích: Trong đó:
+m: Giá trị thặng dư.
+v: Tư bản khả biến (tiền lương).
+Câu 5. Để tăng khối lượng giá trị thặng dư (M), doanh nghiệp nên làm gì?
+A. Chỉ tăng giá bán sản phẩm.
+B. Giảm chất lượng sản phẩm.
+C. Tăng tỷ suất giá trị thặng dư hoặc mở rộng quy mô sử dụng lao động. ✅
+D. Giảm số lượng công nhân.
+Giải thích: Theo công thức M = m' × V, khối lượng giá trị thặng dư tăng khi:
+Tỷ suất giá trị thặng dư (m') tăng.
+Tổng tư bản khả biến (V) tăng (tức sử dụng nhiều lao động hơn).
+Câu 6 (Câu hỏi tổng kết chương)
+Sau khi nghe Minh trình bày, ông Hoàng kết luận:
+"Điều quan trọng nhất mà em cần giải thích với nhà đầu tư là gì?"
+A. Lợi nhuận chỉ đến từ việc bán hàng với giá cao.
+B. Máy móc là nguồn gốc tạo ra toàn bộ lợi nhuận.
+C. Giá trị thặng dư là kết quả của phần lao động không công mà người lao động tạo ra trong quá trình sản xuất. ✅
+D. Lợi nhuận chủ yếu đến từ việc cắt giảm nguyên vật liệu.
+Giải thích: Đây chính là bản chất của giá trị thặng dư theo học thuyết của Karl Marx: lợi nhuận của nhà tư bản bắt nguồn từ phần lao động không được trả công của người lao động, chứ không phải từ việc mua rẻ bán đắt hay từ máy móc tự tạo ra giá trị mới.
+CHAPTER 9
+📍 FINAL CHAPTER (TRAG THÙY) - Giá trị thặng dư trong nền kinh tế số
+
+Story
+Sau gần ba năm phát triển, MINHWEAR đã không còn là một xưởng may nhỏ như những ngày đầu. Doanh nghiệp hiện sở hữu ba nhà máy, hàng trăm nhân viên và hệ thống bán hàng trực tuyến trên toàn quốc.
+Nhận thấy nhu cầu thị trường ngày càng tăng, Minh quyết định xây dựng nền tảng MINHWEAR CONNECT - một ứng dụng kết nối khách hàng, thợ may tự do, đơn vị vận chuyển và nhà cung cấp nguyên liệu trên cùng một hệ thống.
+Nhờ ứng dụng này, đơn hàng được phân bổ tự động đến xưởng gần nhất, lộ trình giao hàng được tối ưu bằng thuật toán AI và toàn bộ quy trình sản xuất được số hóa.
+
+Trong buổi họp với ban lãnh đạo, ông Hoàng đặt câu hỏi cuối cùng:
+"Doanh nghiệp của con đang tăng lợi nhuận rất nhanh. Nhưng con có biết giá trị thặng dư đang được tạo ra bằng cách nào không?"
+Minh nhìn vào bảng thống kê.
+Doanh thu tăng liên tục.
+Thời gian giao hàng giảm một nửa.
+Mỗi công nhân hoàn thành nhiều sản phẩm hơn trước.
+Hệ thống AI giúp giảm rất nhiều chi phí vận hành.
+Minh bắt đầu nhận ra rằng trong nền kinh tế số, doanh nghiệp không chỉ tạo ra giá trị thặng dư bằng cách kéo dài thời gian lao động, mà còn bằng việc ứng dụng công nghệ để nâng cao năng suất.
+Driving Questions
+Nếu là Minh, bạn sẽ chọn chiến lược nào để phát triển doanh nghiệp?
+Lựa chọn:
+Kéo dài thời gian làm việc.
+Đầu tư công nghệ và tự động hóa.
+Tối ưu quy trình giao hàng bằng thuật toán.
+Nâng cao năng suất lao động thông qua đào tạo.
+Nếu chọn:
+⏰ Kéo dài thời gian làm việc
+Hiển thị:
+Giá trị thặng dư tăng
+Chi phí lao động tăng
+Mức hài lòng nhân viên giảm
+Nguy cơ nghỉ việc cao
+Nếu chọn:
+🤖 Đầu tư AI
+Hiển thị:
+Giá trị thặng dư tăng
+Chi phí sản xuất giảm
+Năng suất tăng
+Mức hài lòng nhân viên giữ ổn định
+Nếu chọn:
+🚚 Tối ưu giao hàng
+Hiển thị:
+Chu chuyển tư bản nhanh hơn
+Đơn hàng nhiều hơn
+Doanh thu tăng
+Nếu chọn:
+📚 Đào tạo nhân viên
+Hiển thị:
+Năng suất tăng
+Giá trị thặng dư tương đối tăng
+Chất lượng sản phẩm tốt hơn
+📚 Giải thích lý thuyết
+Theo Karl Marx, doanh nghiệp có thể gia tăng giá trị thặng dư bằng hai phương pháp. Thứ nhất là giá trị thặng dư tuyệt đối, được tạo ra bằng cách kéo dài thời gian lao động để tăng thời gian lao động thặng dư. Thứ hai là giá trị thặng dư tương đối, được tạo ra bằng cách nâng cao năng suất lao động thông qua công nghệ, máy móc hoặc cải tiến quy trình, từ đó rút ngắn thời gian lao động tất yếu và tăng thời gian lao động thặng dư. Trong nền kinh tế số, các doanh nghiệp như Grab, ShopeeFood hay Be chủ yếu áp dụng phương pháp thứ hai bằng cách sử dụng công nghệ và thuật toán để nâng cao hiệu quả hoạt động và gia tăng lợi nhuận.
+📝 Quiz (5 câu)
+Câu 1
+Trong nền kinh tế số, doanh nghiệp thường gia tăng giá trị thặng dư bằng cách nào?
+A. Chỉ tăng giá bán sản phẩm.
+B. Kéo dài thời gian lao động và nâng cao năng suất lao động. ✅
+C. Chỉ tăng chi phí quảng cáo.
+D. Chỉ mở rộng thị trường.
+Giải thích: Doanh nghiệp có thể gia tăng giá trị thặng dư thông qua hai phương pháp cơ bản: kéo dài thời gian lao động (giá trị thặng dư tuyệt đối) hoặc nâng cao năng suất lao động (giá trị thặng dư tương đối).
+Câu 2
+Việc ứng dụng AI để tự động phân bổ đơn hàng chủ yếu giúp doanh nghiệp:
+A. Tạo ra giá trị mới mà không cần lao động.
+B. Rút ngắn thời gian chu chuyển tư bản và nâng cao năng suất. ✅
+C. Thay thế hoàn toàn người lao động.
+D. Làm tăng giá trị của nguyên vật liệu.
+Giải thích: AI không tự tạo ra giá trị mới nhưng giúp tối ưu quy trình, tăng hiệu quả sử dụng sức lao động và rút ngắn thời gian lưu thông.
+Câu 3
+Theo Karl Marx, yếu tố nào vẫn là nguồn gốc trực tiếp tạo ra giá trị mới?
+A. Máy móc.
+B. Trí tuệ nhân tạo.
+C. Lao động sống của con người. ✅
+D. Thuật toán.
+Giải thích: Máy móc và AI chỉ hỗ trợ nâng cao năng suất. Nguồn gốc tạo ra giá trị mới vẫn là sức lao động của con người.
+Câu 4
+Đầu tư công nghệ giúp doanh nghiệp chủ yếu tạo ra:
+A. Giá trị thặng dư tuyệt đối.
+B. Giá trị thặng dư tương đối. ✅
+C. Giá trị sử dụng.
+D. Giá trị trao đổi.
+Giải thích: Công nghệ giúp rút ngắn thời gian lao động tất yếu và tăng thời gian lao động thặng dư mà không cần kéo dài ngày lao động.
+Câu 5
+Qua toàn bộ trò chơi, kết luận nào phản ánh đúng nhất về giá trị thặng dư?
+A. Giá trị thặng dư hình thành từ việc mua rẻ bán đắt.
+B. Giá trị thặng dư chỉ xuất hiện trong nền kinh tế truyền thống.
+C. Giá trị thặng dư được tạo ra từ sức lao động và có thể gia tăng thông qua tổ chức sản xuất, công nghệ và nâng cao năng suất. ✅
+D. Giá trị thặng dư do máy móc tự tạo ra.
+Giải thích: Dù trong sản xuất truyền thống hay nền kinh tế số, giá trị thặng dư vẫn bắt nguồn từ sức lao động của con người. Công nghệ đóng vai trò hỗ trợ nâng cao năng suất, tối ưu quy trình và gia tăng hiệu quả tạo ra giá trị thặng dư.
+FINAL
+🏁 HÀNH TRÌNH ĐÃ HOÀN THÀNH
+🎉 Chúc mừng! Bạn đã đưa MINHWEAR từ một xưởng may nhỏ trở thành một doanh nghiệp phát triển bền vững.
+📈 Thành quả doanh nghiệp
+MINHWEAR
+💰 Lợi nhuận: 18,5 tỷ VNĐ
+👥 Nhân viên: 420 người
+🏭 Nhà máy: 3
+🤖 Tỷ lệ tự động hóa: 75%
+📦 Đơn hàng hoàn thành: 2,1 triệu
+😊 Mức độ hài lòng của nhân viên: 84%
+📚 Những kiến thức bạn đã chinh phục
+Trong suốt hành trình khởi nghiệp, bạn không chỉ phát triển doanh nghiệp mà còn từng bước khám phá những nội dung cốt lõi của học thuyết giá trị thặng dư:
+✅ Nguồn gốc của giá trị thặng dư
+✅ Công thức chung của tư bản
+✅ Hàng hóa sức lao động
+✅ Sự sản xuất giá trị thặng dư
+✅ Tư bản bất biến và tư bản khả biến
+✅ Tiền công
+✅ Tuần hoàn và chu chuyển của tư bản
+✅ Bản chất của giá trị thặng dư
+✅ Giá trị thặng dư trong nền kinh tế số
+💬 Thông điệp cuối cùng
+Bạn đã thành công trong việc xây dựng một doanh nghiệp phát triển. Nhưng thành công lớn nhất là bạn đã hiểu được bản chất của giá trị thặng dư – từ cách nó được tạo ra trong quá trình sản xuất đến cách các doanh nghiệp hiện đại vận dụng công nghệ để gia tăng giá trị trong nền kinh tế số.
+Hy vọng rằng những kiến thức từ The Capital Journey sẽ giúp bạn có thêm góc nhìn để phân tích các mô hình kinh doanh và hiểu rõ hơn về sự vận động của nền kinh tế trong thực tiễn.
