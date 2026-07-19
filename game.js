@@ -1717,8 +1717,37 @@ function renderEndingScreen() {
   };
 }
 
+// Preload all game assets (backgrounds and characters) on startup to prevent flickering
+function preloadAssets() {
+  const assets = [
+    // Backgrounds
+    "img/background/BG_Small_Workshop(Chap1).png",
+    "img/background/BG_Meeting_Room_1(Chap 2).png",
+    "img/background/BG_Meeting_Room_1(Chap 3).png",
+    "img/background/BG_Production_Line_1(Chap 4).png",
+    "img/background/BG_Warehouse_Logistics(Chap 5).png",
+    "img/background/BG_Break_Room(Chap 6).png",
+    "img/background/BG_Warehouse_Logistics(Chap 7).png",
+    "img/background/BG_Meeting_Room_2(Chap 8).png",
+    "img/background/BG_Tech_Office_Hub(Chap 9).png",
+    "img/background/BG_Quiz_Room.png",
+    "img/background/BG_Start_Screen.png",
+    // Characters
+    "img/character/Minh (Nhân vật chính).png",
+    "img/character/Lan - Quản lý sản xuất.png",
+    "img/character/Nhân vật anh Nam - Công nhân.png",
+    "img/character/Nhân vật ông Hoàng – Cố vấn đầu tư.png"
+  ];
+
+  assets.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
 // Start Game Handler
 window.addEventListener("DOMContentLoaded", () => {
+  preloadAssets();
   const hasSaved = loadGameState();
   
   const startBtn = document.getElementById("start-game-btn");
