@@ -34,7 +34,7 @@
       </div>
       <div class="metric-item" title="Độ hài lòng nhân viên">
         <span class="icon">😊</span>
-        <span class="val" id="stat-satisfaction">85%</span>
+        <span class="val" id="stat-satisfaction">70%</span>
       </div>
       <div class="metric-item" title="Tỷ lệ tự động hóa công nghệ">
         <span class="icon">🤖</span>
@@ -173,6 +173,29 @@
       </div>
       <div id="event-actions" class="event-actions">
         <button class="btn-primary" id="event-close-btn">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Growth Report Modal Overlay -->
+  <div id="growth-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel" style="max-width: 500px; width: 90%; text-align: center; padding: 2rem;">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--accent-primary); margin-bottom: 0.5rem;" id="growth-modal-chapter">KẾT QUẢ CHƯƠNG</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Báo cáo sự tăng trưởng chỉ số doanh nghiệp của MINHWEAR</p>
+      
+      <div id="growth-stats-compare" style="display: flex; flex-direction: column; gap: 0.8rem; text-align: left; margin-bottom: 1.5rem;">
+        <!-- Comparative stats (old -> new) loaded dynamically -->
+      </div>
+
+      <div style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--warning-color); margin-bottom: 0.5rem; text-align: left;">Biểu đồ phát triển (Lợi nhuận):</h4>
+        <div id="growth-timeline-chart" class="timeline-chart">
+          <!-- Timeline progress bar and nodes -->
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn-primary" id="growth-close-btn">Tiếp tục hành trình ➔</button>
       </div>
     </div>
   </div>

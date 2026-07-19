@@ -803,7 +803,7 @@ let enterpriseStats = {
   employees: 5,
   automation: 10, // %
   orders: 1000,
-  satisfaction: 85, // %
+  satisfaction: 70, // %
   reputation: 50 // /100
 };
 
@@ -818,37 +818,37 @@ const ACHIEVEMENTS_DATA = [
   {
     id: "unicorn",
     name: "Startup Unicorn",
-    description: "Đạt lợi nhuận tích lũy trên 100 tỷ VNĐ (100.000 triệu).",
+    description: "Đạt lợi nhuận tích lũy trên 15 tỷ VNĐ (15.000 triệu).",
     icon: "🦄",
-    check: () => enterpriseStats.profit >= 100000
+    check: () => enterpriseStats.profit >= 15000
   },
   {
     id: "gptw",
     name: "Great Place To Work",
-    description: "Độ hài lòng nhân viên đạt trên 95%.",
+    description: "Độ hài lòng nhân viên đạt trên 90%.",
     icon: "😊",
-    check: () => enterpriseStats.satisfaction >= 95
+    check: () => enterpriseStats.satisfaction >= 90
   },
   {
     id: "ai_company",
     name: "AI Company",
-    description: "Tỷ lệ tự động hóa công nghệ đạt trên 90%.",
+    description: "Tỷ lệ tự động hóa công nghệ đạt trên 60%.",
     icon: "🤖",
-    check: () => enterpriseStats.automation >= 90
+    check: () => enterpriseStats.automation >= 60
   },
   {
     id: "logistics_master",
     name: "Logistics Master",
-    description: "Đạt tổng số đơn hàng trên 5 triệu.",
+    description: "Đạt tổng số đơn hàng trên 1 triệu.",
     icon: "📦",
-    check: () => enterpriseStats.orders >= 5000000
+    check: () => enterpriseStats.orders >= 1000000
   },
   {
     id: "employee_hero",
     name: "Employee Hero",
-    description: "Số nhân viên đạt trên 300 và độ hài lòng trên 90%.",
+    description: "Số nhân viên đạt trên 150 và độ hài lòng trên 75%.",
     icon: "👥",
-    check: () => enterpriseStats.employees >= 300 && enterpriseStats.satisfaction >= 90
+    check: () => enterpriseStats.employees >= 150 && enterpriseStats.satisfaction >= 75
   }
 ];
 
@@ -889,6 +889,33 @@ const EMAILS_DATA = [
     ]
   },
   {
+    id: "email_recruitment_intern",
+    chapterTrigger: 2, // Triggers at Chapter 3 (idx 2)
+    sender: "Trưởng phòng Nhân sự (HR)",
+    subject: "Đề xuất mở rộng tuyển dụng dây chuyền may",
+    body: "Chào sếp Minh, hiện tại xưởng của chúng ta đang cần thêm 20 công nhân để đáp ứng đơn hàng Thu Đông sắp tới. Phòng HR có 2 phương án: (1) Tuyển thợ lành nghề (lương cao hơn nhưng năng suất tốt và hài lòng cao), (2) Tuyển thực tập sinh/lao động phổ thông rồi đào tạo (tiết kiệm chi phí ban đầu nhưng chất lượng chưa ổn định và tốn công đào tạo).",
+    choices: [
+      {
+        text: "Tuyển thợ lành nghề dài hạn",
+        effectsText: "-50 triệu VNĐ Lợi nhuận, +10% Hài lòng, +10 Uy tín",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 50);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 10);
+          enterpriseStats.reputation = Math.min(100, (enterpriseStats.reputation ?? 50) + 10);
+        }
+      },
+      {
+        text: "Tuyển lao động phổ thông tự đào tạo",
+        effectsText: "+20 triệu VNĐ Lợi nhuận (tiết kiệm chi phí), -10% Hài lòng (quá tải vì phải đào tạo), -5 Uy tín",
+        apply: () => {
+          enterpriseStats.profit += 20;
+          enterpriseStats.satisfaction = Math.max(20, enterpriseStats.satisfaction - 10);
+          enterpriseStats.reputation = Math.max(0, (enterpriseStats.reputation ?? 50) - 5);
+        }
+      }
+    ]
+  },
+  {
     id: "email_chap4",
     chapterTrigger: 3, // Chapter 4 (idx 3)
     sender: "Marketing Manager",
@@ -909,6 +936,32 @@ const EMAILS_DATA = [
         apply: () => {
           enterpriseStats.reputation = Math.max(0, (enterpriseStats.reputation ?? 50) - 15);
           enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      }
+    ]
+  },
+  {
+    id: "email_recruitment_engineer",
+    chapterTrigger: 4, // Chapter 5 (idx 4)
+    sender: "Lan (Quản lý sản xuất)",
+    subject: "Thiếu hụt lao động kỹ thuật vận hành máy mới",
+    body: "Sếp ơi, loạt máy may tự động mới mua về đang thiếu người vận hành. Chúng ta cần gấp 5 kỹ sư kỹ thuật cao để tối ưu công suất máy móc. Chúng nên thuê ngoài dịch vụ (Outsource) hay đăng tuyển dụng dài hạn đây sếp?",
+    choices: [
+      {
+        text: "Đăng tuyển dụng kỹ sư dài hạn",
+        effectsText: "-40 triệu VNĐ Lợi nhuận, +10% Tự động hóa, +5% Hài lòng",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 40);
+          enterpriseStats.automation = Math.min(95, enterpriseStats.automation + 10);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      },
+      {
+        text: "Thuê ngoài ngắn hạn (Outsource)",
+        effectsText: "-20 triệu VNĐ Lợi nhuận, +5% Tự động hóa, +0% Hài lòng",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 20);
+          enterpriseStats.automation = Math.min(95, enterpriseStats.automation + 5);
         }
       }
     ]
@@ -988,7 +1041,7 @@ function resetGameState() {
     employees: 5,
     automation: 10,
     orders: 1000,
-    satisfaction: 85,
+    satisfaction: 70,
     reputation: 50
   };
   unlockedAchievements = [];
@@ -1502,12 +1555,19 @@ function renderQuizStep(chapter) {
       renderQuizStep(chapter);
     } else {
       // Chapter completed!
+      const oldStats = { ...enterpriseStats };
       applyChapterCompletionStats();
+      const newStats = { ...enterpriseStats };
       
-      currentChapterIdx++;
-      currentStep = "story";
-      quizIdx = 0;
-      renderCurrentState();
+      showGrowthReportModal(oldStats, newStats, () => {
+        // Trigger random event before proceeding to the next chapter (20-30% probability)
+        showRandomEventModal(() => {
+          currentChapterIdx++;
+          currentStep = "story";
+          quizIdx = 0;
+          renderCurrentState();
+        });
+      });
     }
   };
 }
@@ -1516,26 +1576,42 @@ function applyChapterCompletionStats() {
   if (currentChapterIdx === 0) {
     enterpriseStats.profit = 50;
     enterpriseStats.employees = 5;
-    enterpriseStats.satisfaction = 85;
+    enterpriseStats.satisfaction = 70;
+    enterpriseStats.automation = 10;
   } else if (currentChapterIdx === 1) {
     enterpriseStats.profit = 150;
     enterpriseStats.employees = 8;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 3);
+    enterpriseStats.automation = 15;
   } else if (currentChapterIdx === 2) {
     enterpriseStats.employees = 28;
     enterpriseStats.profit = 280;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 2); // Minor stress from hiring expansion
+    enterpriseStats.automation = 15;
   } else if (currentChapterIdx === 3) {
     enterpriseStats.profit = 420;
-    enterpriseStats.satisfaction = 82;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 5); // Stabilization bonus
+    enterpriseStats.automation = 20;
   } else if (currentChapterIdx === 4) {
     enterpriseStats.profit = 620;
+    enterpriseStats.employees = 38;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 2); // Relocation pressure
+    enterpriseStats.automation = 30; // High machinery investment
   } else if (currentChapterIdx === 5) {
     enterpriseStats.profit = 850;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 4); // Salary transparency boost
+    enterpriseStats.automation = 35;
   } else if (currentChapterIdx === 6) {
     enterpriseStats.profit = 1200;
     enterpriseStats.orders = 50000;
+    enterpriseStats.employees = 45;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 3); // Logistics overload
+    enterpriseStats.automation = 45;
   } else if (currentChapterIdx === 7) {
     enterpriseStats.profit = 2500;
     enterpriseStats.employees = 150;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 4); // Corporate scaling success
+    enterpriseStats.automation = 50;
   } else if (currentChapterIdx === 8) {
     // Final Chapter choices applied their own stats
   }
@@ -1916,3 +1992,232 @@ function resolveEmailChoice(emailId, choiceIdx) {
   saveGameState();
   renderInboxList();
 }
+
+// ==========================================
+// RANDOM EVENTS ENGINE
+// ==========================================
+
+const RANDOM_EVENTS = [
+  {
+    type: "good",
+    tag: "TIN VUI",
+    title: "Startup Được Báo Chí Đưa Tin",
+    description: "MINHWEAR xuất hiện trên bài viết thương hiệu khởi nghiệp trẻ nổi bật của tờ báo VnExpress. Điều này giúp nâng cao uy tín thương hiệu đáng kể!",
+    effectsText: "+10 Uy tín, +300 triệu VNĐ Lợi nhuận",
+    apply: () => {
+      const oldRep = enterpriseStats.reputation ?? 50;
+      enterpriseStats.reputation = Math.min(100, oldRep + 10);
+      enterpriseStats.profit += 300;
+      updateStatsUI();
+      if (typeof animateStatValue === "function") {
+        animateStatValue("stat-reputation", oldRep, enterpriseStats.reputation, "/100");
+      }
+    }
+  },
+  {
+    type: "bad",
+    tag: "TIN XẤU",
+    title: "Sập Máy Chủ Ngày Flash Sale",
+    description: "Hệ thống website và ứng dụng của MINHWEAR bị quá tải và sập trong suốt 4 tiếng giờ vàng Flash Sale. Khách hàng phàn nàn rất nhiều.",
+    effectsText: "-5,000 Đơn hàng, -5% Hài lòng nhân sự",
+    apply: () => {
+      enterpriseStats.orders = Math.max(0, (enterpriseStats.orders ?? 1000) - 5000);
+      enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 85) - 5);
+      updateStatsUI();
+    }
+  },
+  {
+    type: "special",
+    tag: "TIN ĐẶC BIỆT",
+    title: "Quỹ Đầu Tư Muốn Rót Vốn",
+    description: "Một quỹ đầu tư mạo hiểm nội địa ngỏ ý muốn rót thêm 500 triệu VNĐ để đổi lấy cổ phần ưu đãi của MINHWEAR. Bạn có đồng ý?",
+    isInteractive: true,
+    choices: [
+      {
+        text: "Đồng ý nhận đầu tư",
+        effectsText: "+500 triệu VNĐ Lợi nhuận, +5 Uy tín, -10% Hài lòng (do áp lực chỉ tiêu tăng trưởng nóng)",
+        apply: () => {
+          const oldRep = enterpriseStats.reputation ?? 50;
+          enterpriseStats.profit += 500;
+          enterpriseStats.reputation = Math.min(100, oldRep + 5);
+          enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 85) - 10);
+          updateStatsUI();
+          if (typeof animateStatValue === "function") {
+            animateStatValue("stat-reputation", oldRep, enterpriseStats.reputation, "/100");
+          }
+        }
+      },
+      {
+        text: "Từ chối để giữ tự chủ tài chính",
+        effectsText: "+5% Hài lòng (nhân viên yên tâm vì định hướng phát triển độc lập)",
+        apply: () => {
+          enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 85) + 5);
+          updateStatsUI();
+        }
+      }
+    ]
+  }
+];
+
+function showRandomEventModal(callback) {
+  // 20-30% probability of event triggering after a chapter
+  if (Math.random() > 0.3) {
+    callback();
+    return;
+  }
+
+  const event = RANDOM_EVENTS[Math.floor(Math.random() * RANDOM_EVENTS.length)];
+  const modal = document.getElementById("event-modal");
+  if (!modal) {
+    callback();
+    return;
+  }
+
+  const tagEl = document.getElementById("event-tag");
+  const titleEl = document.getElementById("event-title");
+  const descEl = document.getElementById("event-description");
+  const effectsEl = document.getElementById("event-effects");
+  const actionsEl = document.getElementById("event-actions");
+
+  // Reset display styles
+  tagEl.innerText = event.tag;
+  tagEl.className = "event-tag " + event.type;
+  titleEl.innerText = event.title;
+  descEl.innerText = event.description;
+
+  effectsEl.innerHTML = "";
+  actionsEl.innerHTML = "";
+
+  if (event.isInteractive) {
+    effectsEl.innerHTML = `<p style="color: var(--text-muted); margin-bottom: 0.5rem; font-style: italic;">Bạn phản hồi như thế nào?</p>`;
+    
+    event.choices.forEach(choice => {
+      const btn = document.createElement("button");
+      btn.className = "btn-secondary";
+      btn.style.width = "100%";
+      btn.style.marginBottom = "0.8rem";
+      btn.style.textAlign = "left";
+      btn.style.padding = "0.8rem 1.2rem";
+      btn.style.borderRadius = "8px";
+      btn.innerHTML = `<strong>${choice.text}</strong><br><span style="font-size: 0.85rem; color: var(--warning-color);">${choice.effectsText}</span>`;
+      btn.onclick = () => {
+        choice.apply();
+        effectsEl.innerHTML = `
+          <div class="choice-feedback-box correct-feedback">
+            <p>Quyết định của bạn: <strong>${choice.text}</strong> đã được áp dụng.</p>
+          </div>
+        `;
+        actionsEl.innerHTML = "";
+        const closeBtn = document.createElement("button");
+        closeBtn.className = "btn-primary";
+        closeBtn.innerText = "Xác nhận";
+        closeBtn.onclick = () => {
+          modal.style.display = "none";
+          saveGameState();
+          callback();
+        };
+        actionsEl.appendChild(closeBtn);
+      };
+      actionsEl.appendChild(btn);
+    });
+  } else {
+    effectsEl.innerHTML = `
+      <div class="choice-feedback-box ${event.type === 'good' ? 'correct-feedback' : 'incorrect-feedback'}">
+        <p><strong>Hiệu quả:</strong> ${event.effectsText}</p>
+      </div>
+    `;
+    const closeBtn = document.createElement("button");
+    closeBtn.className = "btn-primary";
+    closeBtn.innerText = "Xác nhận";
+    closeBtn.onclick = () => {
+      event.apply();
+      modal.style.display = "none";
+      saveGameState();
+      callback();
+    };
+    actionsEl.appendChild(closeBtn);
+  }
+
+  modal.style.display = "flex";
+}
+
+function showGrowthReportModal(oldStats, newStats, callback) {
+  const modal = document.getElementById("growth-modal");
+  if (!modal) {
+    callback();
+    return;
+  }
+
+  document.getElementById("growth-modal-chapter").innerText = `KẾT QUẢ CHƯƠNG ${currentChapterIdx + 1}`;
+  
+  const compareContainer = document.getElementById("growth-stats-compare");
+  
+  const formatProfit = (val) => {
+    return val >= 1000 ? (val / 1000).toFixed(1) + " tỷ VNĐ" : val + " triệu VNĐ";
+  };
+
+  compareContainer.innerHTML = `
+    <div class="growth-compare-row">
+      <span class="growth-compare-label">💰 Lợi nhuận:</span>
+      <span class="growth-compare-values">
+        ${formatProfit(oldStats.profit)} <span class="growth-arrow">➔</span> ${formatProfit(newStats.profit)}
+      </span>
+    </div>
+    <div class="growth-compare-row">
+      <span class="growth-compare-label">👥 Nhân viên:</span>
+      <span class="growth-compare-values">
+        ${oldStats.employees} người <span class="growth-arrow">➔</span> ${newStats.employees} người
+      </span>
+    </div>
+    <div class="growth-compare-row">
+      <span class="growth-compare-label">🤖 Tự động hóa:</span>
+      <span class="growth-compare-values">
+        ${oldStats.automation}% <span class="growth-arrow">➔</span> ${newStats.automation}%
+      </span>
+    </div>
+    <div class="growth-compare-row">
+      <span class="growth-compare-label">😊 Sự hài lòng:</span>
+      <span class="growth-compare-values">
+        ${oldStats.satisfaction}% <span class="growth-arrow">➔</span> ${newStats.satisfaction}%
+      </span>
+    </div>
+  `;
+
+  // Draw the timeline
+  const chartEl = document.getElementById("growth-timeline-chart");
+  if (chartEl) {
+    const totalSteps = 9;
+    const profits = [50, 150, 280, 420, 620, 850, 1200, 2500, 18500];
+    const labels = ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9"];
+    
+    let html = `<div class="timeline-chart-progress" style="width: ${((currentChapterIdx) / (totalSteps - 1)) * 100}%"></div>`;
+    
+    for (let i = 0; i < totalSteps; i++) {
+      let nodeClass = "timeline-node";
+      if (i < currentChapterIdx) {
+        nodeClass += " completed";
+      } else if (i === currentChapterIdx) {
+        nodeClass += " active";
+      }
+      
+      const profitVal = profits[i] >= 1000 ? (profits[i] / 1000).toFixed(1) + " tỷ" : profits[i] + "tr";
+      html += `
+        <div class="${nodeClass}">
+          <div class="timeline-node-tooltip">${profitVal}</div>
+          <div class="timeline-node-label">${labels[i]}</div>
+        </div>
+      `;
+    }
+    chartEl.innerHTML = html;
+  }
+
+  const closeBtn = document.getElementById("growth-close-btn");
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+    callback();
+  };
+
+  modal.style.display = "flex";
+}
+
+
