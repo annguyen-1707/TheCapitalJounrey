@@ -1721,15 +1721,15 @@ function renderEndingScreen() {
 function preloadAssets() {
   const assets = [
     // Backgrounds
-    "img/background/BG_Small_Workshop(Chap1).png",
-    "img/background/BG_Meeting_Room_1(Chap 2).png",
-    "img/background/BG_Meeting_Room_1(Chap 3).png",
-    "img/background/BG_Production_Line_1(Chap 4).png",
-    "img/background/BG_Warehouse_Logistics(Chap 5).png",
-    "img/background/BG_Break_Room(Chap 6).png",
-    "img/background/BG_Warehouse_Logistics(Chap 7).png",
-    "img/background/BG_Meeting_Room_2(Chap 8).png",
-    "img/background/BG_Tech_Office_Hub(Chap 9).png",
+    "img/background/Background CHAPTER 1.png",
+    "img/background/Background CHAPTER 2.png",
+    "img/background/Background CHAPTER 3.png",
+    "img/background/Background CHAPTER 4.png",
+    "img/background/Background CHAPTER 5.png",
+    "img/background/Background CHAPTER 6.png",
+    "img/background/Background CHAPTER 7.png",
+    "img/background/Background CHAPTER 8.png",
+    "img/background/Background CHAPTER 9.png",
     "img/background/BG_Quiz_Room.png",
     "img/background/BG_Start_Screen.png",
     // Characters
