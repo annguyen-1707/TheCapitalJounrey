@@ -47,11 +47,28 @@
       </div>
       <div class="metric-item" title="Độ hài lòng nhân viên">
         <span class="icon">😊</span>
-        <span class="val" id="stat-satisfaction">85%</span>
+        <span class="val" id="stat-satisfaction">70%</span>
       </div>
       <div class="metric-item" title="Tỷ lệ tự động hóa công nghệ">
         <span class="icon">🤖</span>
         <span class="val" id="stat-automation">10%</span>
+      </div>
+      <div class="metric-item" title="Danh tiếng thương hiệu">
+        <span class="icon">⭐</span>
+        <span class="val" id="stat-reputation">50/100</span>
+      </div>
+      <div class="metric-item" title="Số lượng đơn hàng tích lũy">
+        <span class="icon">📦</span>
+        <span class="val" id="stat-orders">1.000 đơn</span>
+      </div>
+      
+      <div class="header-actions" style="display: flex; gap: 0.5rem; margin-left: 0.5rem;">
+        <button class="header-btn" id="inbox-btn" title="Hộp thư CEO">
+          📬 <span id="inbox-badge" class="badge-count" style="display: none;">0</span>
+        </button>
+        <button class="header-btn" id="achievements-btn" title="Danh sách thành tựu">
+          🏆
+        </button>
       </div>
     </div>
   </header>
@@ -145,26 +162,90 @@
 
     <!-- 6. ENDING SCREEN -->
     <section class="screen" id="end-screen">
-      <div class="end-wrapper glass-panel">
-        <h1>HÀNH TRÌNH ĐÃ HOÀN THÀNH!</h1>
-        <p class="end-desc">Chúc mừng! Bạn đã đưa MINHWEAR từ một xưởng may nhỏ trở thành một doanh nghiệp phát triển bền vững trong nền kinh tế số.</p>
+      <div class="end-wrapper glass-panel" style="max-width: 520px; width: 90%; padding: 2rem; text-align: center;">
+        <h1 style="font-family: var(--font-title); font-size: 1.5rem; margin-bottom: 1.2rem; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-primary);">🏁 HÀNH TRÌNH ĐÃ HOÀN THÀNH</h1>
         
-        <div class="final-stats-grid">
-          <div class="final-stat-card" id="end-profit">💰 Lợi nhuận: 18.5 tỷ VNĐ</div>
-          <div class="final-stat-card" id="end-employees">👥 Nhân viên: 420 người</div>
-          <div class="final-stat-card" id="end-automation">🤖 Tự động hóa: 75%</div>
-          <div class="final-stat-card" id="end-satisfaction">😊 Sự hài lòng: 84%</div>
+        <div class="end-message" id="end-message-box">
+          <!-- Dynamically populated exactly according to the script -->
         </div>
         
-        <div class="end-message">
-          <p><strong>Thông điệp cuối cùng:</strong> Bạn đã thành công trong việc xây dựng một doanh nghiệp phát triển. Nhưng thành công lớn nhất là bạn đã hiểu được bản chất của giá trị thặng dư - từ cách nó được tạo ra trong quá trình sản xuất đến cách các doanh nghiệp hiện đại vận dụng công nghệ số và AI để gia tăng giá trị thặng dư tương đối.</p>
-        </div>
-        
-        <button class="btn-primary" id="restart-game-btn">Chơi lại từ đầu</button>
+        <button class="btn-primary" id="restart-game-btn" style="margin-top: 1rem;">Chơi lại </button>
       </div>
     </section>
 
   </main>
+
+  <!-- Random Event Modal Overlay -->
+  <div id="event-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel">
+      <div id="event-tag" class="event-tag">TIN VUI</div>
+      <h2 id="event-title">Tiêu đề sự kiện</h2>
+      <p id="event-description">Nội dung chi tiết sự kiện ngẫu nhiên diễn ra trong công ty của bạn.</p>
+      <div id="event-effects" class="event-effects">
+        <!-- Event effects list -->
+      </div>
+      <div id="event-actions" class="event-actions">
+        <button class="btn-primary" id="event-close-btn">Xác nhận</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Growth Report Modal Overlay -->
+  <div id="growth-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel" style="max-width: 500px; width: 90%; text-align: center; padding: 2rem;">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; color: var(--accent-primary); margin-bottom: 0.5rem;" id="growth-modal-chapter">KẾT QUẢ CHƯƠNG</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Báo cáo sự tăng trưởng chỉ số doanh nghiệp của MINHWEAR</p>
+      
+      <div id="growth-stats-compare" style="display: flex; flex-direction: column; gap: 0.8rem; text-align: left; margin-bottom: 1.5rem;">
+        <!-- Comparative stats (old -> new) loaded dynamically -->
+      </div>
+
+      <div style="margin-top: 1rem; margin-bottom: 1.5rem;">
+        <h4 style="font-family: var(--font-title); font-size: 1rem; color: var(--warning-color); margin-bottom: 0.5rem; text-align: left;">Biểu đồ phát triển (Lợi nhuận):</h4>
+        <div id="growth-timeline-chart" class="timeline-chart">
+          <!-- Timeline progress bar and nodes -->
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn-primary" id="growth-close-btn">Tiếp tục hành trình ➔</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Achievements Modal Overlay -->
+  <div id="achievements-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel" style="max-width: 650px; width: 90%;">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--accent-primary);">🏆 THÀNH TỰU ĐẠT ĐƯỢC</h2>
+      <div id="achievements-list" class="achievements-list">
+        <!-- Achievements cards loaded dynamically -->
+      </div>
+      <div style="margin-top: 2rem;">
+        <button class="btn-primary" id="achievements-close-btn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEO Inbox Modal Overlay -->
+  <div id="inbox-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content glass-panel" style="max-width: 950px; width: 95%; padding: 2rem;">
+      <h2 style="font-family: var(--font-title); font-size: 1.6rem; font-weight: 800; margin-bottom: 1.5rem; color: var(--accent-primary);">📬 HỘP THƯ CEO</h2>
+      <div class="inbox-layout">
+        <div class="inbox-sidebar" id="inbox-email-list">
+          <!-- Email items list -->
+        </div>
+        <div class="inbox-viewer" id="inbox-email-view">
+          <p style="color: var(--text-muted); font-style: italic; text-align: center; margin-top: 4rem;">Chọn một tin nhắn để xem chi tiết và giải quyết vấn đề.</p>
+        </div>
+      </div>
+      <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+        <button class="btn-primary" id="inbox-close-btn">Đóng</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container" class="toast-container"></div>
 
   <!-- Load JavaScript Code -->
   <script src="game.js"></script>
