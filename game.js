@@ -1319,4 +1319,337 @@ window.addEventListener("DOMContentLoaded", () => {
   } else {
     resumeBtn.style.display = "none";
   }
+
 });
+
+// =====================================================================
+//  THE CAPITAL JOURNEY — WEB AUDIO ENGINE
+//  Tạo nhạc nền thủ công (không cần file âm thanh) bằng Web Audio API
+//  3 Theme: "journey" (story/sim/theory), "quiz" (căng thẳng), "ending" (khải hoàn)
+// =====================================================================
+const MusicEngine = (() => {
+  let audioCtx = null;
+  let masterGain = null;
+  let currentTheme = null;
+  let isPlaying = false;
+  let isMuted = false;
+
+  // Scheduled oscillators & timers to clean up on theme switch
+  let scheduledNodes = [];
+  let loopTimer = null;
+
+  // --- Music Theory Helpers ---
+  // Convert MIDI note number to frequency
+  function midiToFreq(note) {
+    return 440 * Math.pow(2, (note - 69) / 12);
+  }
+
+  // Create a short envelope on a gain node
+  function applyEnvelope(gainNode, now, attack, sustain, release, peakGain) {
+    gainNode.gain.setValueAtTime(0, now);
+    gainNode.gain.linearRampToValueAtTime(peakGain, now + attack);
+    gainNode.gain.setValueAtTime(peakGain, now + attack + sustain);
+    gainNode.gain.linearRampToValueAtTime(0, now + attack + sustain + release);
+  }
+
+  // Play a single synthesised note
+  function playNote(freq, startTime, duration, type = "sine", gainVal = 0.18) {
+    if (!audioCtx) return;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.connect(gain);
+    gain.connect(masterGain);
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, startTime);
+    applyEnvelope(gain, startTime, 0.02, duration * 0.7, duration * 0.28, gainVal);
+    osc.start(startTime);
+    osc.stop(startTime + duration + 0.05);
+    scheduledNodes.push(osc);
+  }
+
+  // Play a chord (array of MIDI notes) at given time
+  function playChord(midiNotes, startTime, duration, type = "sine", gainVal = 0.1) {
+    midiNotes.forEach(n => playNote(midiToFreq(n), startTime, duration, type, gainVal));
+  }
+
+  // Simple reverb via feedback delay
+  function createReverb() {
+    const delay = audioCtx.createDelay(0.5);
+    const feedback = audioCtx.createGain();
+    const wetGain = audioCtx.createGain();
+    delay.delayTime.value = 0.25;
+    feedback.gain.value = 0.38;
+    wetGain.gain.value = 0.22;
+    delay.connect(feedback);
+    feedback.connect(delay);
+    delay.connect(wetGain);
+    wetGain.connect(masterGain);
+    return delay; // input
+  }
+
+  // ── THEME 1: "Journey" ─ ambient corporate, hopeful ──────────────────
+  // Chord progression: Am → F → C → G  (minor-to-major journey feel)
+  function scheduleJourneyLoop() {
+    if (!isPlaying || currentTheme !== "journey") return;
+    const now = audioCtx.currentTime;
+    const bps = 60 / 72; // 72 BPM
+
+    // Bass notes
+    const bassNotes = [45, 41, 48, 43]; // A2, F2, C3, G2
+    bassNotes.forEach((n, i) => {
+      playNote(midiToFreq(n), now + i * bps * 2, bps * 1.6, "sine", 0.22);
+    });
+
+    // Mid-range chords
+    const chords = [
+      [57, 60, 64],   // Am: A3 C4 E4
+      [53, 57, 60],   // F:  F3 A3 C4
+      [48, 52, 55],   // C:  C3 E3 G3
+      [43, 47, 50],   // G:  G2 B2 D3
+    ];
+    chords.forEach((chord, i) => {
+      playChord(chord, now + i * bps * 2, bps * 1.8, "triangle", 0.09);
+    });
+
+    // High melodic lead (gentle arpeggios)
+    const melody = [
+      [69, now + 0],            // A4
+      [72, now + bps * 0.5],   // C5
+      [76, now + bps * 1],     // E5
+      [74, now + bps * 1.5],   // D5
+      [65, now + bps * 2],     // F4
+      [69, now + bps * 2.5],   // A4
+      [72, now + bps * 3],     // C5
+      [71, now + bps * 3.5],   // B4
+      [72, now + bps * 4],     // C5
+      [76, now + bps * 4.5],   // E5
+      [79, now + bps * 5],     // G5
+      [77, now + bps * 5.5],   // F5
+      [67, now + bps * 6],     // G4
+      [71, now + bps * 6.5],   // B4
+      [74, now + bps * 7],     // D5
+      [72, now + bps * 7.5],   // C5
+    ];
+    melody.forEach(([note, time]) => {
+      playNote(midiToFreq(note), time, bps * 0.45, "sine", 0.12);
+    });
+
+    const loopLength = bps * 8 * 1000 - 20;
+    loopTimer = setTimeout(scheduleJourneyLoop, loopLength);
+  }
+
+  // ── THEME 2: "Quiz" ─ tense, focused, rhythmic ───────────────────────
+  // Minor key, more percussive, faster
+  function scheduleQuizLoop() {
+    if (!isPlaying || currentTheme !== "quiz") return;
+    const now = audioCtx.currentTime;
+    const bps = 60 / 100; // 100 BPM
+
+    // Rhythmic bass
+    const bassPattern = [
+      [45, 0], [45, bps * 0.5], [43, bps * 1], [43, bps * 1.5],
+      [41, bps * 2], [41, bps * 2.5], [43, bps * 3], [45, bps * 3.5],
+    ];
+    bassPattern.forEach(([n, t]) => {
+      playNote(midiToFreq(n), now + t, bps * 0.4, "sawtooth", 0.15);
+    });
+
+    // Staccato chord stabs
+    const stabChords = [
+      [[57, 60, 63], bps * 0],      // Am7
+      [[57, 60, 63], bps * 0.25],
+      [[55, 58, 62], bps * 2],      // Gm
+      [[55, 58, 62], bps * 2.25],
+    ];
+    stabChords.forEach(([chord, t]) => {
+      playChord(chord, now + t, bps * 0.2, "square", 0.06);
+    });
+
+    // Tension melody
+    const qMelody = [
+      [69, bps * 0],   [72, bps * 0.5],  [71, bps * 1],
+      [69, bps * 1.5], [67, bps * 2],    [65, bps * 2.5],
+      [67, bps * 3],   [69, bps * 3.5],
+    ];
+    qMelody.forEach(([note, t]) => {
+      playNote(midiToFreq(note), now + t, bps * 0.38, "triangle", 0.11);
+    });
+
+    const loopLength = bps * 4 * 1000 - 20;
+    loopTimer = setTimeout(scheduleQuizLoop, loopLength);
+  }
+
+  // ── THEME 3: "Ending" ─ triumphant, uplifting, orchestral ────────────
+  // Major key, full chords, sweep up
+  function scheduleEndingLoop() {
+    if (!isPlaying || currentTheme !== "ending") return;
+    const now = audioCtx.currentTime;
+    const bps = 60 / 80; // 80 BPM
+
+    // Heroic bass
+    const bassNotes = [48, 52, 55, 57, 60, 64, 67, 69]; // C G C A C E G A (ascending)
+    bassNotes.forEach((n, i) => {
+      playNote(midiToFreq(n - 12), now + i * bps, bps * 0.85, "sine", 0.24);
+    });
+
+    // Full major chords
+    const chords = [
+      [60, 64, 67, 72],   // C major + octave
+      [55, 59, 62, 67],   // G major
+      [57, 60, 64, 69],   // A minor
+      [53, 57, 60, 65],   // F major
+      [60, 64, 67, 72],   // C major
+      [55, 59, 62, 67],   // G major
+      [62, 65, 69, 74],   // D minor
+      [60, 64, 67, 72],   // C major
+    ];
+    chords.forEach((chord, i) => {
+      playChord(chord, now + i * bps, bps * 0.9, "triangle", 0.08);
+    });
+
+    // Triumphant trumpet-like melody
+    const eMelody = [
+      [72, bps * 0],   [76, bps * 0.5],  [79, bps * 1],   [81, bps * 1.5],
+      [79, bps * 2],   [76, bps * 2.5],  [77, bps * 3],   [79, bps * 3.5],
+      [81, bps * 4],   [84, bps * 4.5],  [83, bps * 5],   [81, bps * 5.5],
+      [79, bps * 6],   [77, bps * 6.5],  [76, bps * 7],   [72, bps * 7.5],
+    ];
+    eMelody.forEach(([note, t]) => {
+      playNote(midiToFreq(note), now + t, bps * 0.45, "sawtooth", 0.1);
+    });
+
+    const loopLength = bps * 8 * 1000 - 20;
+    loopTimer = setTimeout(scheduleEndingLoop, loopLength);
+  }
+
+  // ── Public API ────────────────────────────────────────────────────────
+
+  function stopAll() {
+    if (loopTimer) clearTimeout(loopTimer);
+    loopTimer = null;
+    scheduledNodes.forEach(n => {
+      try { n.stop(); } catch(e) {}
+    });
+    scheduledNodes = [];
+  }
+
+  function switchTheme(theme) {
+    if (!isPlaying || theme === currentTheme) return;
+    stopAll();
+    currentTheme = theme;
+    // Fade master out/in for smooth transition
+    if (masterGain) {
+      masterGain.gain.linearRampToValueAtTime(0.0, audioCtx.currentTime + 0.4);
+      setTimeout(() => {
+        if (masterGain) masterGain.gain.linearRampToValueAtTime(0.75, audioCtx.currentTime + 0.6);
+        startCurrentTheme();
+      }, 420);
+    }
+  }
+
+  function startCurrentTheme() {
+    if (currentTheme === "journey") scheduleJourneyLoop();
+    else if (currentTheme === "quiz")    scheduleQuizLoop();
+    else if (currentTheme === "ending")  scheduleEndingLoop();
+  }
+
+  function startMusic(theme = "journey") {
+    if (!audioCtx) return;
+    if (isMuted) return;
+    stopAll();
+    currentTheme = theme;
+    isPlaying = true;
+    masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
+    masterGain.gain.linearRampToValueAtTime(0.75, audioCtx.currentTime + 1.2);
+    startCurrentTheme();
+    updateMusicBtn(true);
+  }
+
+  function stopMusic() {
+    isPlaying = false;
+    stopAll();
+    if (masterGain) {
+      masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
+    }
+    updateMusicBtn(false);
+  }
+
+  function toggleMute() {
+    if (isPlaying) {
+      isMuted = true;
+      stopMusic();
+    } else {
+      isMuted = false;
+      const themeForCurrentStep = getThemeForCurrentStep();
+      startMusic(themeForCurrentStep);
+    }
+  }
+
+  function getThemeForCurrentStep() {
+    if (currentChapterIdx >= CHAPTER_DATA.length) return "ending";
+    if (currentStep === "quiz") return "quiz";
+    return "journey";
+  }
+
+  function updateMusicBtn(playing) {
+    const btn = document.getElementById("music-toggle-btn");
+    if (!btn) return;
+    if (playing) {
+      btn.classList.remove("is-muted");
+      btn.classList.add("is-playing");
+      btn.title = "Đang phát nhạc — Bấm để tắt";
+    } else {
+      btn.classList.remove("is-playing");
+      btn.classList.add("is-muted");
+      btn.title = "Nhạc đang tắt — Bấm để bật";
+    }
+  }
+
+  function init() {
+    const btn = document.getElementById("music-toggle-btn");
+    if (btn) {
+      btn.addEventListener("click", () => {
+        // AudioContext must be created/resumed on user gesture (browser policy)
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = 0;
+          masterGain.connect(audioCtx.destination);
+        }
+        if (audioCtx.state === "suspended") {
+          audioCtx.resume();
+        }
+        toggleMute();
+      });
+    }
+  }
+
+  // ── Hook into renderCurrentState to auto-switch themes ────────────────
+  const _originalRenderCurrentState = window.renderCurrentState || null;
+
+  // Override renderCurrentState to inject theme switching
+  // (called after the original game renderCurrentState is defined)
+  function hookRenderState() {
+    const originalFn = renderCurrentState;
+    window.renderCurrentState = function() {
+      originalFn();
+      if (isPlaying && !isMuted) {
+        const newTheme = getThemeForCurrentStep();
+        switchTheme(newTheme);
+      }
+    };
+  }
+
+  // Delay hook until after DOMContentLoaded so renderCurrentState exists
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(hookRenderState, 0);
+  });
+
+  return { init, startMusic, stopMusic, toggleMute, switchTheme };
+})();
+
+// Initialize music after DOM is ready (placed after MusicEngine definition)
+window.addEventListener("DOMContentLoaded", () => {
+  MusicEngine.init();
+});
+
