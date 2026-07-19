@@ -1,5 +1,5 @@
 /* CSS Design System for "THE CAPITAL JOURNEY" */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
 
 :root {
   --bg-primary: hsl(222, 47%, 8%);
@@ -14,8 +14,8 @@
   --success-color: hsl(142, 70%, 45%);
   --danger-color: hsl(350, 80%, 55%);
   --warning-color: hsl(45, 90%, 50%);
-  --font-title: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-title: 'Montserrat', 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

@@ -974,10 +974,16 @@ function renderQuestionStep(chapter) {
       }
       
       // Show feedback
+      const correctChoice = dq.choices.find(c => c.isCorrect);
+      const correctAnswerHtml = !choice.isCorrect && correctChoice
+        ? `<p style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed rgba(239, 68, 68, 0.3); color: hsl(142, 70%, 80%);"><strong>Đáp án đúng là:</strong> ${correctChoice.text}</p>`
+        : "";
+
       document.getElementById("dialogue-text").innerHTML = `
         <strong class="question-prompt">${dq.text}</strong>
         <div class="choice-feedback-box ${choice.isCorrect ? 'correct-feedback' : 'incorrect-feedback'}">
           <p>${choice.feedback}</p>
+          ${correctAnswerHtml}
         </div>
       `;
       
