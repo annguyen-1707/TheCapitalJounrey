@@ -3,7 +3,7 @@ const CHAPTER_DATA = [
   {
     id: 1,
     title: "Chương 1: Nguồn gốc của giá trị thặng dư",
-    bg: "img/background/BG_Small_Workshop(Chap1).png",
+    bg: "img/background/Background CHAPTER 1.png",
     story: [
       {
         speaker: "Minh",
@@ -91,7 +91,7 @@ const CHAPTER_DATA = [
   {
     id: 2,
     title: "Chương 2: Công thức chung của tư bản",
-    bg: "img/background/BG_Meeting_Room_1(Chap 2).png",
+    bg: "img/background/Background CHAPTER 2.png",
     story: [
       {
         speaker: "Minh",
@@ -179,7 +179,7 @@ const CHAPTER_DATA = [
   {
     id: 3,
     title: "Chương 3: Hàng hóa sức lao động",
-    bg: "img/background/BG_Meeting_Room_1(Chap 3).png",
+    bg: "img/background/Background CHAPTER 3.png",
     story: [
       {
         speaker: "Minh",
@@ -267,7 +267,7 @@ const CHAPTER_DATA = [
   {
     id: 4,
     title: "Chương 4: Sự sản xuất giá trị thặng dư",
-    bg: "img/background/BG_Production_Line_1(Chap 4).png",
+    bg: "img/background/Background CHAPTER 4.png",
     story: [
       {
         speaker: "Minh",
@@ -357,7 +357,7 @@ const CHAPTER_DATA = [
   {
     id: 5,
     title: "Chương 5: Tư bản bất biến và tư bản khả biến",
-    bg: "img/background/BG_Warehouse_Logistics(Chap 5).png",
+    bg: "img/background/Background CHAPTER 5.png",
     story: [
       {
         speaker: "Minh",
@@ -442,7 +442,7 @@ const CHAPTER_DATA = [
   {
     id: 6,
     title: "Chương 6: Tiền công",
-    bg: "img/background/BG_Break_Room(Chap 6).png",
+    bg: "img/background/Background CHAPTER 6.png",
     story: [
       {
         speaker: "Anh Nam",
@@ -530,7 +530,7 @@ const CHAPTER_DATA = [
   {
     id: 7,
     title: "Chương 7: Tuần hoàn và chu chuyển tư bản",
-    bg: "img/background/BG_Warehouse_Logistics(Chap 7).png",
+    bg: "img/background/Background CHAPTER 7.png",
     story: [
       {
         speaker: "Minh",
@@ -615,7 +615,7 @@ const CHAPTER_DATA = [
   {
     id: 8,
     title: "Chương 8: Bản chất của giá trị thặng dư",
-    bg: "img/background/BG_Meeting_Room_2(Chap 8).png",
+    bg: "img/background/Background CHAPTER 8.png",
     story: [
       {
         speaker: "Minh",
@@ -708,7 +708,7 @@ const CHAPTER_DATA = [
   {
     id: 9,
     title: "Chương 9: Giá trị thặng dư trong nền kinh tế số",
-    bg: "img/background/BG_Tech_Office_Hub(Chap 9).png",
+    bg: "img/background/Background CHAPTER 9.png",
     story: [
       {
         speaker: "Minh",
@@ -801,11 +801,196 @@ let quizIdx = 0;
 let enterpriseStats = {
   profit: 50, // in Million VNĐ
   employees: 5,
-  factories: 1,
   automation: 10, // %
   orders: 1000,
-  satisfaction: 85 // %
+  satisfaction: 70, // %
+  reputation: 50 // /100
 };
+
+let lastEnterpriseStats = null;
+
+// State tracking for Achievements & Inbox
+let unlockedAchievements = [];
+let inboxEmails = [];
+
+// Achievements Database from SPST_MLN122.txt
+const ACHIEVEMENTS_DATA = [
+  {
+    id: "unicorn",
+    name: "Startup Unicorn",
+    description: "Đạt lợi nhuận tích lũy trên 15 tỷ VNĐ (15.000 triệu).",
+    icon: "🦄",
+    check: () => enterpriseStats.profit >= 15000
+  },
+  {
+    id: "gptw",
+    name: "Great Place To Work",
+    description: "Độ hài lòng nhân viên đạt trên 90%.",
+    icon: "😊",
+    check: () => enterpriseStats.satisfaction >= 90
+  },
+  {
+    id: "ai_company",
+    name: "AI Company",
+    description: "Tỷ lệ tự động hóa công nghệ đạt trên 60%.",
+    icon: "🤖",
+    check: () => enterpriseStats.automation >= 60
+  },
+  {
+    id: "logistics_master",
+    name: "Logistics Master",
+    description: "Đạt tổng số đơn hàng trên 1 triệu.",
+    icon: "📦",
+    check: () => enterpriseStats.orders >= 1000000
+  },
+  {
+    id: "employee_hero",
+    name: "Employee Hero",
+    description: "Số nhân viên đạt trên 150 và độ hài lòng trên 75%.",
+    icon: "👥",
+    check: () => enterpriseStats.employees >= 150 && enterpriseStats.satisfaction >= 75
+  }
+];
+
+// Inbox Emails Database from SPST_MLN122.txt
+const EMAILS_DATA = [
+  {
+    id: "email_chap2",
+    chapterTrigger: 1, // Triggers at Chapter 2 (idx 1)
+    sender: "Lan (Quản lý sản xuất)",
+    subject: "Quá tải đơn hàng sản xuất",
+    body: "Sếp ơi, đơn hàng đợt này về dồn dập khiến anh em công nhân dưới xưởng đang quá tải trầm trọng. Họ bắt đầu than phiền và mệt mỏi. Sếp xem chúng ta có nên cho tăng ca dưới xưởng không ạ?",
+    choices: [
+      {
+        text: "Cho tăng ca và trả thêm lương 150% phụ cấp.",
+        effectsText: "-30 triệu VNĐ Lợi nhuận, +10% Hài lòng nhân sự",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 30);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 10);
+        }
+      },
+      {
+        text: "Ép tăng ca bắt buộc, không phụ cấp để tối ưu chi phí.",
+        effectsText: "+50 triệu VNĐ Lợi nhuận, -25% Hài lòng nhân sự, -10 Uy tín",
+        apply: () => {
+          enterpriseStats.profit += 50;
+          enterpriseStats.satisfaction = Math.max(30, enterpriseStats.satisfaction - 25);
+          enterpriseStats.reputation = Math.max(0, (enterpriseStats.reputation ?? 50) - 10);
+        }
+      },
+      {
+        text: "Giữ nguyên giờ làm, tuyển thêm thợ phụ thời vụ ngắn hạn.",
+        effectsText: "-20 triệu VNĐ Lợi nhuận, +5% Hài lòng nhân sự",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 20);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      }
+    ]
+  },
+  {
+    id: "email_recruitment_intern",
+    chapterTrigger: 2, // Triggers at Chapter 3 (idx 2)
+    sender: "Trưởng phòng Nhân sự (HR)",
+    subject: "Đề xuất mở rộng tuyển dụng dây chuyền may",
+    body: "Chào sếp Minh, hiện tại xưởng của chúng ta đang cần thêm 20 công nhân để đáp ứng đơn hàng Thu Đông sắp tới. Phòng HR có 2 phương án: (1) Tuyển thợ lành nghề (lương cao hơn nhưng năng suất tốt và hài lòng cao), (2) Tuyển thực tập sinh/lao động phổ thông rồi đào tạo (tiết kiệm chi phí ban đầu nhưng chất lượng chưa ổn định và tốn công đào tạo).",
+    choices: [
+      {
+        text: "Tuyển thợ lành nghề dài hạn",
+        effectsText: "-50 triệu VNĐ Lợi nhuận, +10% Hài lòng, +10 Uy tín",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 50);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 10);
+          enterpriseStats.reputation = Math.min(100, (enterpriseStats.reputation ?? 50) + 10);
+        }
+      },
+      {
+        text: "Tuyển lao động phổ thông tự đào tạo",
+        effectsText: "+20 triệu VNĐ Lợi nhuận (tiết kiệm chi phí), -10% Hài lòng (quá tải vì phải đào tạo), -5 Uy tín",
+        apply: () => {
+          enterpriseStats.profit += 20;
+          enterpriseStats.satisfaction = Math.max(20, enterpriseStats.satisfaction - 10);
+          enterpriseStats.reputation = Math.max(0, (enterpriseStats.reputation ?? 50) - 5);
+        }
+      }
+    ]
+  },
+  {
+    id: "email_chap4",
+    chapterTrigger: 3, // Chapter 4 (idx 3)
+    sender: "Marketing Manager",
+    subject: "Chiến dịch quảng cáo gặp sự cố",
+    body: "Sếp ơi, đối thủ cạnh tranh đang tung tin đồn thất thiệt nói chất lượng vải của MINHWEAR có hóa chất gây ngứa. Chiến dịch Marketing mới của chúng ta đang bị ảnh hưởng nghiêm trọng và khách hàng bắt đầu hoang mang. Sếp quyết định thế nào ạ?",
+    choices: [
+      {
+        text: "Thuê đơn vị xử lý khủng hoảng truyền thông chuyên nghiệp công bố kiểm nghiệm.",
+        effectsText: "-100 triệu VNĐ Lợi nhuận, +15 Uy tín",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 100);
+          enterpriseStats.reputation = Math.min(100, (enterpriseStats.reputation ?? 50) + 15);
+        }
+      },
+      {
+        text: "Im lặng tập trung cải thiện sản phẩm, tặng quà tri ân khách hàng.",
+        effectsText: "-15 Uy tín, +5% Hài lòng nhân viên",
+        apply: () => {
+          enterpriseStats.reputation = Math.max(0, (enterpriseStats.reputation ?? 50) - 15);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      }
+    ]
+  },
+  {
+    id: "email_recruitment_engineer",
+    chapterTrigger: 4, // Chapter 5 (idx 4)
+    sender: "Lan (Quản lý sản xuất)",
+    subject: "Thiếu hụt lao động kỹ thuật vận hành máy mới",
+    body: "Sếp ơi, loạt máy may tự động mới mua về đang thiếu người vận hành. Chúng ta cần gấp 5 kỹ sư kỹ thuật cao để tối ưu công suất máy móc. Chúng nên thuê ngoài dịch vụ (Outsource) hay đăng tuyển dụng dài hạn đây sếp?",
+    choices: [
+      {
+        text: "Đăng tuyển dụng kỹ sư dài hạn",
+        effectsText: "-40 triệu VNĐ Lợi nhuận, +10% Tự động hóa, +5% Hài lòng",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 40);
+          enterpriseStats.automation = Math.min(95, enterpriseStats.automation + 10);
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      },
+      {
+        text: "Thuê ngoài ngắn hạn (Outsource)",
+        effectsText: "-20 triệu VNĐ Lợi nhuận, +5% Tự động hóa, +0% Hài lòng",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 20);
+          enterpriseStats.automation = Math.min(95, enterpriseStats.automation + 5);
+        }
+      }
+    ]
+  },
+  {
+    id: "email_chap6",
+    chapterTrigger: 5, // Chapter 6 (idx 5)
+    sender: "Ông Hoàng (Cố vấn đầu tư)",
+    subject: "Lời mời hợp tác trao đổi chuyển đổi số",
+    body: "Chào Minh, ta vừa gặp một đối tác công nghệ rất có tiềm năng. Họ có giải pháp tối ưu hóa kho bãi bằng AI. Ta khuyên con nên dành thời gian gặp họ ngày mai để bàn bạc sâu hơn về chiến lược tự động hóa sắp tới.",
+    choices: [
+      {
+        text: "Đồng ý gặp mặt đối tác và ký thử nghiệm giải pháp AI.",
+        effectsText: "-50 triệu VNĐ Lợi nhuận, +10% Tự động hóa",
+        apply: () => {
+          enterpriseStats.profit = Math.max(0, enterpriseStats.profit - 50);
+          enterpriseStats.automation = Math.min(95, enterpriseStats.automation + 10);
+        }
+      },
+      {
+        text: "Từ chối để tiếp tục tập trung cải tiến mô hình quản lý hiện hữu.",
+        effectsText: "+5% Hài lòng nhân viên",
+        apply: () => {
+          enterpriseStats.satisfaction = Math.min(100, enterpriseStats.satisfaction + 5);
+        }
+      }
+    ]
+  }
+];
 
 // Functions to save & load game state
 function saveGameState() {
@@ -814,7 +999,9 @@ function saveGameState() {
     currentStep,
     storyIdx,
     quizIdx,
-    enterpriseStats
+    enterpriseStats,
+    unlockedAchievements,
+    inboxEmails
   };
   localStorage.setItem("capital_journey_state", JSON.stringify(gameState));
 }
@@ -829,6 +1016,12 @@ function loadGameState() {
       storyIdx = parsed.storyIdx ?? 0;
       quizIdx = parsed.quizIdx ?? 0;
       enterpriseStats = parsed.enterpriseStats ?? enterpriseStats;
+      if (enterpriseStats.reputation === undefined) {
+        enterpriseStats.reputation = 50;
+      }
+      unlockedAchievements = parsed.unlockedAchievements ?? [];
+      inboxEmails = parsed.inboxEmails ?? [];
+      lastEnterpriseStats = { ...enterpriseStats };
       return true;
     } catch (e) {
       console.error("Error loading saved state", e);
@@ -846,27 +1039,142 @@ function resetGameState() {
   enterpriseStats = {
     profit: 50,
     employees: 5,
-    factories: 1,
     automation: 10,
     orders: 1000,
-    satisfaction: 85
+    satisfaction: 70,
+    reputation: 50
   };
+  unlockedAchievements = [];
+  inboxEmails = [];
+  lastEnterpriseStats = { ...enterpriseStats };
   renderCurrentState();
+}
+
+function showStatDelta(parentEl, value, suffix) {
+  if (!parentEl) return;
+  
+  const span = document.createElement("span");
+  span.className = "stat-delta " + (value > 0 ? "positive" : "negative");
+  
+  const sign = value > 0 ? "+" : "";
+  let displaySuffix = suffix;
+  
+  if (suffix.trim() === "%") {
+    displaySuffix = "%";
+  } else if (suffix.trim() === "/100") {
+    displaySuffix = "";
+  } else if (suffix.trim() === "người") {
+    displaySuffix = " người";
+  } else if (suffix.trim() === "triệu VNĐ") {
+    displaySuffix = "M";
+  } else if (suffix.trim() === "đơn") {
+    displaySuffix = " đơn";
+    span.innerText = `${sign}${value.toLocaleString('vi-VN')}${displaySuffix}`;
+    parentEl.appendChild(span);
+    setTimeout(() => {
+      span.remove();
+    }, 2800);
+    return;
+  }
+  
+  span.innerText = `${sign}${value}${displaySuffix}`;
+  parentEl.appendChild(span);
+  
+  setTimeout(() => {
+    span.remove();
+  }, 2800);
+}
+
+function animateStatValue(elementId, startVal, endVal, suffix, isCurrency = false) {
+  const obj = document.getElementById(elementId);
+  if (!obj) return;
+
+  // Clear previous animations if any
+  obj.classList.remove("stat-changed-up", "stat-changed-down");
+  
+  if (startVal === endVal) {
+    if (isCurrency) {
+      obj.innerText = endVal >= 1000 ? (endVal / 1000).toFixed(1) + " tỷ VNĐ" : endVal + suffix;
+    } else if (suffix.trim() === "đơn") {
+      obj.innerText = endVal.toLocaleString('vi-VN') + suffix;
+    } else {
+      obj.innerText = endVal + suffix;
+    }
+    return;
+  }
+
+  // Trigger floating delta indicator (+ / - value)
+  const diff = endVal - startVal;
+  showStatDelta(obj.parentElement, diff, suffix);
+
+  // Determine direction and add animation class
+  const directionClass = endVal > startVal ? "stat-changed-up" : "stat-changed-down";
+  // Trigger reflow to restart animation
+  void obj.offsetWidth; 
+  obj.classList.add(directionClass);
+
+  const duration = 1000; // 1s animation
+  const startTime = performance.now();
+
+  function updateNumber(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    
+    // Ease out quad
+    const easeProgress = progress * (2 - progress);
+    const currentVal = Math.round(startVal + (endVal - startVal) * easeProgress);
+
+    if (isCurrency) {
+      obj.innerText = currentVal >= 1000 ? (currentVal / 1000).toFixed(1) + " tỷ VNĐ" : currentVal + suffix;
+    } else if (suffix.trim() === "đơn") {
+      obj.innerText = currentVal.toLocaleString('vi-VN') + suffix;
+    } else {
+      obj.innerText = currentVal + suffix;
+    }
+
+    if (progress < 1) {
+      requestAnimationFrame(updateNumber);
+    } else {
+      // Final set
+      if (isCurrency) {
+        obj.innerText = endVal >= 1000 ? (endVal / 1000).toFixed(1) + " tỷ VNĐ" : endVal + suffix;
+      } else if (suffix.trim() === "đơn") {
+        obj.innerText = endVal.toLocaleString('vi-VN') + suffix;
+      } else {
+        obj.innerText = endVal + suffix;
+      }
+    }
+  }
+
+  requestAnimationFrame(updateNumber);
 }
 
 // Update DOM elements representing the enterprise stats
 function updateStatsUI() {
-  document.getElementById("stat-profit").innerText = enterpriseStats.profit >= 1000 
-    ? (enterpriseStats.profit / 1000).toFixed(1) + " tỷ VNĐ" 
-    : enterpriseStats.profit + " triệu VNĐ";
-  document.getElementById("stat-employees").innerText = enterpriseStats.employees + " người";
-  document.getElementById("stat-satisfaction").innerText = enterpriseStats.satisfaction + "%";
-  document.getElementById("stat-automation").innerText = enterpriseStats.automation + "%";
+  if (!lastEnterpriseStats) {
+    lastEnterpriseStats = { ...enterpriseStats };
+  }
+
+  animateStatValue("stat-profit", lastEnterpriseStats.profit, enterpriseStats.profit, " triệu VNĐ", true);
+  animateStatValue("stat-employees", lastEnterpriseStats.employees, enterpriseStats.employees, " người");
+  animateStatValue("stat-satisfaction", lastEnterpriseStats.satisfaction, enterpriseStats.satisfaction, "%");
+  animateStatValue("stat-automation", lastEnterpriseStats.automation, enterpriseStats.automation, "%");
+  animateStatValue("stat-reputation", lastEnterpriseStats.reputation ?? 50, enterpriseStats.reputation ?? 50, "/100");
+  animateStatValue("stat-orders", lastEnterpriseStats.orders ?? 1000, enterpriseStats.orders ?? 1000, " đơn");
+
+  // Keep track of the last values
+  lastEnterpriseStats = { ...enterpriseStats };
+
+  // Trigger achievements check
+  checkAchievements();
 }
 
 function renderCurrentState() {
   saveGameState();
   updateStatsUI();
+
+  // Trigger email inbox updates
+  checkAndUnlockEmails();
 
   // Hide all screens
   document.getElementById("start-screen").style.display = "none";
@@ -974,10 +1282,16 @@ function renderQuestionStep(chapter) {
       }
       
       // Show feedback
+      const correctChoice = dq.choices.find(c => c.isCorrect);
+      const correctAnswerHtml = !choice.isCorrect && correctChoice
+        ? `<p style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed rgba(239, 68, 68, 0.3); color: hsl(142, 70%, 80%);"><strong>Đáp án đúng là:</strong> ${correctChoice.text}</p>`
+        : "";
+
       document.getElementById("dialogue-text").innerHTML = `
         <strong class="question-prompt">${dq.text}</strong>
         <div class="choice-feedback-box ${choice.isCorrect ? 'correct-feedback' : 'incorrect-feedback'}">
           <p>${choice.feedback}</p>
+          ${correctAnswerHtml}
         </div>
       `;
       
@@ -1241,12 +1555,19 @@ function renderQuizStep(chapter) {
       renderQuizStep(chapter);
     } else {
       // Chapter completed!
+      const oldStats = { ...enterpriseStats };
       applyChapterCompletionStats();
+      const newStats = { ...enterpriseStats };
       
-      currentChapterIdx++;
-      currentStep = "story";
-      quizIdx = 0;
-      renderCurrentState();
+      showGrowthReportModal(oldStats, newStats, () => {
+        // Trigger random event before proceeding to the next chapter (20-30% probability)
+        showRandomEventModal(() => {
+          currentChapterIdx++;
+          currentStep = "story";
+          quizIdx = 0;
+          renderCurrentState();
+        });
+      });
     }
   };
 }
@@ -1255,26 +1576,42 @@ function applyChapterCompletionStats() {
   if (currentChapterIdx === 0) {
     enterpriseStats.profit = 50;
     enterpriseStats.employees = 5;
-    enterpriseStats.satisfaction = 85;
+    enterpriseStats.satisfaction = 70;
+    enterpriseStats.automation = 10;
   } else if (currentChapterIdx === 1) {
     enterpriseStats.profit = 150;
     enterpriseStats.employees = 8;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 3);
+    enterpriseStats.automation = 15;
   } else if (currentChapterIdx === 2) {
     enterpriseStats.employees = 28;
     enterpriseStats.profit = 280;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 2); // Minor stress from hiring expansion
+    enterpriseStats.automation = 15;
   } else if (currentChapterIdx === 3) {
     enterpriseStats.profit = 420;
-    enterpriseStats.satisfaction = 82;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 5); // Stabilization bonus
+    enterpriseStats.automation = 20;
   } else if (currentChapterIdx === 4) {
     enterpriseStats.profit = 620;
+    enterpriseStats.employees = 38;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 2); // Relocation pressure
+    enterpriseStats.automation = 30; // High machinery investment
   } else if (currentChapterIdx === 5) {
     enterpriseStats.profit = 850;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 4); // Salary transparency boost
+    enterpriseStats.automation = 35;
   } else if (currentChapterIdx === 6) {
     enterpriseStats.profit = 1200;
     enterpriseStats.orders = 50000;
+    enterpriseStats.employees = 45;
+    enterpriseStats.satisfaction = Math.max(20, (enterpriseStats.satisfaction ?? 70) - 3); // Logistics overload
+    enterpriseStats.automation = 45;
   } else if (currentChapterIdx === 7) {
     enterpriseStats.profit = 2500;
     enterpriseStats.employees = 150;
+    enterpriseStats.satisfaction = Math.min(100, (enterpriseStats.satisfaction ?? 70) + 4); // Corporate scaling success
+    enterpriseStats.automation = 50;
   } else if (currentChapterIdx === 8) {
     // Final Chapter choices applied their own stats
   }
@@ -1283,13 +1620,96 @@ function applyChapterCompletionStats() {
 function renderEndingScreen() {
   const endScreen = document.getElementById("end-screen");
   endScreen.style.display = "flex";
-  endScreen.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("img/background/BG_Meeting_Room_2(Chap 8).png")`;
+  endScreen.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url("img/background/Background CHAPTER 8.png")`;
 
-  // Update ending screen stats based on their final state
-  document.getElementById("end-profit").innerText = "💰 Lợi nhuận: " + (enterpriseStats.profit >= 1000 ? (enterpriseStats.profit / 1000).toFixed(1) + " tỷ VNĐ" : enterpriseStats.profit + " triệu VNĐ");
-  document.getElementById("end-employees").innerText = "👥 Nhân viên: " + enterpriseStats.employees + " người";
-  document.getElementById("end-automation").innerText = "🤖 Tỷ lệ tự động hóa: " + enterpriseStats.automation + "%";
-  document.getElementById("end-satisfaction").innerText = "😊 Mức độ hài lòng: " + enterpriseStats.satisfaction + "%";
+  // Calculate ending description based on the stats achieved from SPST_MLN122.txt
+  let endingTitle = "";
+  let endingDesc = "";
+  let endingBadge = "";
+  let endingClass = "";
+
+  const p = enterpriseStats.profit;          // in Million VNĐ
+  const s = enterpriseStats.satisfaction;    // in %
+  const a = enterpriseStats.automation;      // in %
+  const e = enterpriseStats.employees;       // in count
+  const o = enterpriseStats.orders;          // in count
+  const r = enterpriseStats.reputation ?? 50; // in /100
+
+  // Ending 1: Doanh nghiệp nhân văn (The People's Choice)
+  if (s >= 95 && e >= 150 && a < 40) {
+    endingTitle = "🏆 KẾT THÚC: DOANH NGHIỆP NHÂN VĂN";
+    endingDesc = "Bạn tin rằng con người là tài sản quý giá nhất của doanh nghiệp.<br><br>MINHWEAR đã trở thành một trong những nơi làm việc đáng mơ ước, nơi nhân viên được đào tạo bài bản, được ghi nhận những đóng góp của mình và cùng nhau xây dựng một môi trường làm việc tích cực.<br><br><em>\"Một doanh nghiệp vĩ đại không chỉ tạo ra lợi nhuận, mà còn tạo ra những con người hạnh phúc.\"</em>";
+    endingBadge = "👨‍👩‍👧‍👦 Best Place To Work";
+    endingClass = "ending-human";
+  }
+  // Ending 2: Đế chế AI (AI Empire)
+  else if (a >= 85 && p >= 5000 && s >= 80) {
+    endingTitle = "🤖 KẾT THÚC: ĐẾ CHẾ AI";
+    endingDesc = "Bạn đã đưa MINHWEAR trở thành doanh nghiệp tiên phong trong chuyển đổi số và ứng dụng công nghệ vào mọi hoạt động sản xuất.<br><br>Nhà máy thông minh vận hành với mức độ tự động hóa cao, giúp doanh nghiệp tối ưu năng suất và tạo ra lợi thế cạnh tranh vượt trội trong thời đại số.<br><br><em>\"Trong kỷ nguyên số, công nghệ chính là tư bản mới.\"</em>";
+    endingBadge = "🚀 AI Industry Leader";
+    endingClass = "ending-ai";
+  }
+  // Ending 3: Kỳ lân công nghệ (Startup Unicorn)
+  else if (p >= 5000 && r >= 80 && o >= 300000 && a >= 50 && a <= 84) {
+    endingTitle = "🦄 KẾT THÚC: KỲ LÂN CÔNG NGHỆ";
+    endingDesc = "MINHWEAR đã có những bước phát triển vượt bậc, trở thành doanh nghiệp công nghệ tăng trưởng nhanh với thương hiệu được khách hàng tin tưởng.<br><br>Sự kết hợp giữa công nghệ, hiệu quả vận hành và chiến lược kinh doanh đúng đắn đã giúp doanh nghiệp vươn lên mạnh mẽ trên thị trường.<br><br><em>\"Khởi nghiệp không chỉ là tạo ra sản phẩm, mà còn là tạo ra những giá trị có khả năng thay đổi tương lai.\"</em>";
+    endingBadge = "🦄 Startup Unicorn";
+    endingClass = "ending-unicorn";
+  }
+  // Ending 4: Ông vua Logistics (Logistics Master)
+  else if (o >= 500000 && p >= 4000) {
+    endingTitle = "📦 KẾT THÚC: ÔNG VUA LOGISTICS";
+    endingDesc = "Bạn đã tập trung nguồn lực để tối ưu hóa chuỗi cung ứng và hoạt động vận hành của doanh nghiệp.<br><br>MINHWEAR sở hữu hệ thống logistics hiệu quả, đáp ứng hàng trăm nghìn đơn hàng và mang đến trải nghiệm tốt hơn cho khách hàng.<br><br><em>\"Khách hàng không chỉ mua sản phẩm, họ mua cả trải nghiệm mà doanh nghiệp mang lại.\"</em>";
+    endingBadge = "📦 Logistics Master";
+    endingClass = "ending-logistics";
+  }
+  // Ending 5: Cỗ máy tạo giá trị thặng dư (The Surplus Value Machine)
+  else if (s <= 40 && p >= 4000 && a >= 50) {
+    endingTitle = "💸 KẾT THÚC: CỖ MÁY TẠO GIÁ TRỊ THẶNG DƯ";
+    endingDesc = "Bạn đã tối đa hóa lợi nhuận bằng mọi nguồn lực mà doanh nghiệp sở hữu.<br><br>MINHWEAR đạt được mức tăng trưởng ấn tượng về mặt tài chính, nhưng đi kèm với đó là sự đánh đổi về môi trường làm việc và mức độ hài lòng của người lao động.<br><br>Bạn đã chứng minh rằng giá trị thặng dư có thể được tạo ra và mở rộng mạnh mẽ trong nền kinh tế số. Tuy nhiên, thành công về mặt kinh tế luôn đi kèm với những câu hỏi về trách nhiệm xã hội của doanh nghiệp.<br><br><em>\"Liệu lợi nhuận có phải là thước đo duy nhất của thành công?\"</em><br><br><strong>Thông điệp:</strong> Giá trị thặng dư không chỉ phản ánh hiệu quả kinh doanh mà còn cho thấy những lựa chọn kinh tế và xã hội mà doanh nghiệp phải đối mặt trong quá trình phát triển.";
+    endingBadge = "💸 The Surplus Value Machine";
+    endingClass = "ending-surplus";
+  }
+  // Ending 6: Doanh nghiệp phát triển bền vững (Secret Ending)
+  else if (p >= 4000 && s >= 90 && a >= 40 && a <= 70 && r >= 80 && o >= 200000) {
+    endingTitle = "🌟 KẾT THÚC BÍ MẬT: DOANH NGHIỆP PHÁT TRIỂN BỀN VỮNG";
+    endingDesc = "Bạn đã tìm được sự cân bằng giữa lợi nhuận, công nghệ, con người và hiệu quả vận hành.<br><br>MINHWEAR trở thành hình mẫu của một doanh nghiệp phát triển bền vững trong thời đại số, nơi công nghệ được ứng dụng để hỗ trợ con người thay vì thay thế hoàn toàn họ.<br><br>Bạn đã chứng minh rằng doanh nghiệp có thể tăng trưởng mạnh mẽ mà vẫn tạo ra những giá trị tích cực cho người lao động và xã hội.<br><br><em>\"Công nghệ giúp doanh nghiệp phát triển, nhưng con người mới là yếu tố quyết định tương lai.\"</em>";
+    endingBadge = "🌱 Sustainable Enterprise";
+    endingClass = "ending-secret";
+  }
+  // Ending 7: Doanh nghiệp đang chuyển mình (Growing Enterprise)
+  else {
+    endingTitle = "🏢 KẾT THÚC: DOANH NGHIỆP ĐANG CHUYỂN MÌNH";
+    endingDesc = "MINHWEAR đã trải qua một hành trình đầy thử thách từ những ngày đầu khởi nghiệp cho đến khi trở thành một doanh nghiệp có chỗ đứng trên thị trường.<br><br>Dù chưa đạt được một chiến lược phát triển nổi bật, mỗi quyết định mà bạn đưa ra đều là những bài học quý giá về quản trị doanh nghiệp, giá trị thặng dư và sự vận động của nền kinh tế hiện đại.<br><br><em>\"Không tồn tại một công thức thành công duy nhất trong kinh doanh. Điều quan trọng là không ngừng học hỏi và hoàn thiện chiến lược phát triển của mình.\"</em>";
+    endingBadge = "🏢 Growing Enterprise";
+    endingClass = "ending-growing";
+  }
+
+  const endMessageBox = document.getElementById("end-message-box");
+  if (endMessageBox) {
+    endMessageBox.innerHTML = `
+      <!-- Tiêu đề Kết thúc -->
+      <h3 class="ending-title ${endingClass}" style="margin-bottom: 0.8rem; font-family: var(--font-title); font-size: 1.4rem; font-weight: 850;">
+        ${endingTitle}
+      </h3>
+      
+      <!-- Mô tả & Trích dẫn -->
+      <div style="line-height: 1.6; font-size: 0.95rem; color: var(--text-main); margin-bottom: 1.2rem; text-align: center; font-style: italic;">
+        ${endingDesc}
+      </div>
+      
+      <!-- Danh hiệu -->
+      <div style="font-size: 0.9rem; font-weight: 700; margin-bottom: 1.2rem; line-height: 1.5;">
+        <span style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Danh hiệu:</span><br>
+        <span style="color: var(--accent-primary); font-size: 1.15rem; text-shadow: 0 0 10px var(--accent-glow);">${endingBadge}</span>
+      </div>
+      
+      <!-- Footer thông báo mở khóa -->
+      <p style="font-size: 0.85rem; color: var(--text-muted); font-style: italic; margin-top: 0.8rem; margin-bottom: 0;">
+        Bạn đã mở khóa 1 trong 7 kết thúc của trò chơi.
+      </p>
+    `;
+  }
 
   const restartBtn = document.getElementById("restart-game-btn");
   restartBtn.onclick = () => {
@@ -1297,8 +1717,37 @@ function renderEndingScreen() {
   };
 }
 
+// Preload all game assets (backgrounds and characters) on startup to prevent flickering
+function preloadAssets() {
+  const assets = [
+    // Backgrounds
+    "img/background/BG_Small_Workshop(Chap1).png",
+    "img/background/BG_Meeting_Room_1(Chap 2).png",
+    "img/background/BG_Meeting_Room_1(Chap 3).png",
+    "img/background/BG_Production_Line_1(Chap 4).png",
+    "img/background/BG_Warehouse_Logistics(Chap 5).png",
+    "img/background/BG_Break_Room(Chap 6).png",
+    "img/background/BG_Warehouse_Logistics(Chap 7).png",
+    "img/background/BG_Meeting_Room_2(Chap 8).png",
+    "img/background/BG_Tech_Office_Hub(Chap 9).png",
+    "img/background/BG_Quiz_Room.png",
+    "img/background/BG_Start_Screen.png",
+    // Characters
+    "img/character/Minh (Nhân vật chính).png",
+    "img/character/Lan - Quản lý sản xuất.png",
+    "img/character/Nhân vật anh Nam - Công nhân.png",
+    "img/character/Nhân vật ông Hoàng – Cố vấn đầu tư.png"
+  ];
+
+  assets.forEach(src => {
+    const img = new Image();
+    img.src = src;
+  });
+}
+
 // Start Game Handler
 window.addEventListener("DOMContentLoaded", () => {
+  preloadAssets();
   const hasSaved = loadGameState();
   
   const startBtn = document.getElementById("start-game-btn");
@@ -1320,336 +1769,7 @@ window.addEventListener("DOMContentLoaded", () => {
     resumeBtn.style.display = "none";
   }
 
-});
 
-// =====================================================================
-//  THE CAPITAL JOURNEY — WEB AUDIO ENGINE
-//  Tạo nhạc nền thủ công (không cần file âm thanh) bằng Web Audio API
-//  3 Theme: "journey" (story/sim/theory), "quiz" (căng thẳng), "ending" (khải hoàn)
-// =====================================================================
-const MusicEngine = (() => {
-  let audioCtx = null;
-  let masterGain = null;
-  let currentTheme = null;
-  let isPlaying = false;
-  let isMuted = false;
 
-  // Scheduled oscillators & timers to clean up on theme switch
-  let scheduledNodes = [];
-  let loopTimer = null;
 
-  // --- Music Theory Helpers ---
-  // Convert MIDI note number to frequency
-  function midiToFreq(note) {
-    return 440 * Math.pow(2, (note - 69) / 12);
-  }
-
-  // Create a short envelope on a gain node
-  function applyEnvelope(gainNode, now, attack, sustain, release, peakGain) {
-    gainNode.gain.setValueAtTime(0, now);
-    gainNode.gain.linearRampToValueAtTime(peakGain, now + attack);
-    gainNode.gain.setValueAtTime(peakGain, now + attack + sustain);
-    gainNode.gain.linearRampToValueAtTime(0, now + attack + sustain + release);
-  }
-
-  // Play a single synthesised note
-  function playNote(freq, startTime, duration, type = "sine", gainVal = 0.18) {
-    if (!audioCtx) return;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.connect(gain);
-    gain.connect(masterGain);
-    osc.type = type;
-    osc.frequency.setValueAtTime(freq, startTime);
-    applyEnvelope(gain, startTime, 0.02, duration * 0.7, duration * 0.28, gainVal);
-    osc.start(startTime);
-    osc.stop(startTime + duration + 0.05);
-    scheduledNodes.push(osc);
-  }
-
-  // Play a chord (array of MIDI notes) at given time
-  function playChord(midiNotes, startTime, duration, type = "sine", gainVal = 0.1) {
-    midiNotes.forEach(n => playNote(midiToFreq(n), startTime, duration, type, gainVal));
-  }
-
-  // Simple reverb via feedback delay
-  function createReverb() {
-    const delay = audioCtx.createDelay(0.5);
-    const feedback = audioCtx.createGain();
-    const wetGain = audioCtx.createGain();
-    delay.delayTime.value = 0.25;
-    feedback.gain.value = 0.38;
-    wetGain.gain.value = 0.22;
-    delay.connect(feedback);
-    feedback.connect(delay);
-    delay.connect(wetGain);
-    wetGain.connect(masterGain);
-    return delay; // input
-  }
-
-  // ── THEME 1: "Journey" ─ ambient corporate, hopeful ──────────────────
-  // Chord progression: Am → F → C → G  (minor-to-major journey feel)
-  function scheduleJourneyLoop() {
-    if (!isPlaying || currentTheme !== "journey") return;
-    const now = audioCtx.currentTime;
-    const bps = 60 / 72; // 72 BPM
-
-    // Bass notes
-    const bassNotes = [45, 41, 48, 43]; // A2, F2, C3, G2
-    bassNotes.forEach((n, i) => {
-      playNote(midiToFreq(n), now + i * bps * 2, bps * 1.6, "sine", 0.22);
-    });
-
-    // Mid-range chords
-    const chords = [
-      [57, 60, 64],   // Am: A3 C4 E4
-      [53, 57, 60],   // F:  F3 A3 C4
-      [48, 52, 55],   // C:  C3 E3 G3
-      [43, 47, 50],   // G:  G2 B2 D3
-    ];
-    chords.forEach((chord, i) => {
-      playChord(chord, now + i * bps * 2, bps * 1.8, "triangle", 0.09);
-    });
-
-    // High melodic lead (gentle arpeggios)
-    const melody = [
-      [69, now + 0],            // A4
-      [72, now + bps * 0.5],   // C5
-      [76, now + bps * 1],     // E5
-      [74, now + bps * 1.5],   // D5
-      [65, now + bps * 2],     // F4
-      [69, now + bps * 2.5],   // A4
-      [72, now + bps * 3],     // C5
-      [71, now + bps * 3.5],   // B4
-      [72, now + bps * 4],     // C5
-      [76, now + bps * 4.5],   // E5
-      [79, now + bps * 5],     // G5
-      [77, now + bps * 5.5],   // F5
-      [67, now + bps * 6],     // G4
-      [71, now + bps * 6.5],   // B4
-      [74, now + bps * 7],     // D5
-      [72, now + bps * 7.5],   // C5
-    ];
-    melody.forEach(([note, time]) => {
-      playNote(midiToFreq(note), time, bps * 0.45, "sine", 0.12);
-    });
-
-    const loopLength = bps * 8 * 1000 - 20;
-    loopTimer = setTimeout(scheduleJourneyLoop, loopLength);
-  }
-
-  // ── THEME 2: "Quiz" ─ tense, focused, rhythmic ───────────────────────
-  // Minor key, more percussive, faster
-  function scheduleQuizLoop() {
-    if (!isPlaying || currentTheme !== "quiz") return;
-    const now = audioCtx.currentTime;
-    const bps = 60 / 100; // 100 BPM
-
-    // Rhythmic bass
-    const bassPattern = [
-      [45, 0], [45, bps * 0.5], [43, bps * 1], [43, bps * 1.5],
-      [41, bps * 2], [41, bps * 2.5], [43, bps * 3], [45, bps * 3.5],
-    ];
-    bassPattern.forEach(([n, t]) => {
-      playNote(midiToFreq(n), now + t, bps * 0.4, "sawtooth", 0.15);
-    });
-
-    // Staccato chord stabs
-    const stabChords = [
-      [[57, 60, 63], bps * 0],      // Am7
-      [[57, 60, 63], bps * 0.25],
-      [[55, 58, 62], bps * 2],      // Gm
-      [[55, 58, 62], bps * 2.25],
-    ];
-    stabChords.forEach(([chord, t]) => {
-      playChord(chord, now + t, bps * 0.2, "square", 0.06);
-    });
-
-    // Tension melody
-    const qMelody = [
-      [69, bps * 0],   [72, bps * 0.5],  [71, bps * 1],
-      [69, bps * 1.5], [67, bps * 2],    [65, bps * 2.5],
-      [67, bps * 3],   [69, bps * 3.5],
-    ];
-    qMelody.forEach(([note, t]) => {
-      playNote(midiToFreq(note), now + t, bps * 0.38, "triangle", 0.11);
-    });
-
-    const loopLength = bps * 4 * 1000 - 20;
-    loopTimer = setTimeout(scheduleQuizLoop, loopLength);
-  }
-
-  // ── THEME 3: "Ending" ─ triumphant, uplifting, orchestral ────────────
-  // Major key, full chords, sweep up
-  function scheduleEndingLoop() {
-    if (!isPlaying || currentTheme !== "ending") return;
-    const now = audioCtx.currentTime;
-    const bps = 60 / 80; // 80 BPM
-
-    // Heroic bass
-    const bassNotes = [48, 52, 55, 57, 60, 64, 67, 69]; // C G C A C E G A (ascending)
-    bassNotes.forEach((n, i) => {
-      playNote(midiToFreq(n - 12), now + i * bps, bps * 0.85, "sine", 0.24);
-    });
-
-    // Full major chords
-    const chords = [
-      [60, 64, 67, 72],   // C major + octave
-      [55, 59, 62, 67],   // G major
-      [57, 60, 64, 69],   // A minor
-      [53, 57, 60, 65],   // F major
-      [60, 64, 67, 72],   // C major
-      [55, 59, 62, 67],   // G major
-      [62, 65, 69, 74],   // D minor
-      [60, 64, 67, 72],   // C major
-    ];
-    chords.forEach((chord, i) => {
-      playChord(chord, now + i * bps, bps * 0.9, "triangle", 0.08);
-    });
-
-    // Triumphant trumpet-like melody
-    const eMelody = [
-      [72, bps * 0],   [76, bps * 0.5],  [79, bps * 1],   [81, bps * 1.5],
-      [79, bps * 2],   [76, bps * 2.5],  [77, bps * 3],   [79, bps * 3.5],
-      [81, bps * 4],   [84, bps * 4.5],  [83, bps * 5],   [81, bps * 5.5],
-      [79, bps * 6],   [77, bps * 6.5],  [76, bps * 7],   [72, bps * 7.5],
-    ];
-    eMelody.forEach(([note, t]) => {
-      playNote(midiToFreq(note), now + t, bps * 0.45, "sawtooth", 0.1);
-    });
-
-    const loopLength = bps * 8 * 1000 - 20;
-    loopTimer = setTimeout(scheduleEndingLoop, loopLength);
-  }
-
-  // ── Public API ────────────────────────────────────────────────────────
-
-  function stopAll() {
-    if (loopTimer) clearTimeout(loopTimer);
-    loopTimer = null;
-    scheduledNodes.forEach(n => {
-      try { n.stop(); } catch(e) {}
-    });
-    scheduledNodes = [];
-  }
-
-  function switchTheme(theme) {
-    if (!isPlaying || theme === currentTheme) return;
-    stopAll();
-    currentTheme = theme;
-    // Fade master out/in for smooth transition
-    if (masterGain) {
-      masterGain.gain.linearRampToValueAtTime(0.0, audioCtx.currentTime + 0.4);
-      setTimeout(() => {
-        if (masterGain) masterGain.gain.linearRampToValueAtTime(0.75, audioCtx.currentTime + 0.6);
-        startCurrentTheme();
-      }, 420);
-    }
-  }
-
-  function startCurrentTheme() {
-    if (currentTheme === "journey") scheduleJourneyLoop();
-    else if (currentTheme === "quiz")    scheduleQuizLoop();
-    else if (currentTheme === "ending")  scheduleEndingLoop();
-  }
-
-  function startMusic(theme = "journey") {
-    if (!audioCtx) return;
-    if (isMuted) return;
-    stopAll();
-    currentTheme = theme;
-    isPlaying = true;
-    masterGain.gain.setValueAtTime(0, audioCtx.currentTime);
-    masterGain.gain.linearRampToValueAtTime(0.75, audioCtx.currentTime + 1.2);
-    startCurrentTheme();
-    updateMusicBtn(true);
-  }
-
-  function stopMusic() {
-    isPlaying = false;
-    stopAll();
-    if (masterGain) {
-      masterGain.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.5);
-    }
-    updateMusicBtn(false);
-  }
-
-  function toggleMute() {
-    if (isPlaying) {
-      isMuted = true;
-      stopMusic();
-    } else {
-      isMuted = false;
-      const themeForCurrentStep = getThemeForCurrentStep();
-      startMusic(themeForCurrentStep);
-    }
-  }
-
-  function getThemeForCurrentStep() {
-    if (currentChapterIdx >= CHAPTER_DATA.length) return "ending";
-    if (currentStep === "quiz") return "quiz";
-    return "journey";
-  }
-
-  function updateMusicBtn(playing) {
-    const btn = document.getElementById("music-toggle-btn");
-    if (!btn) return;
-    if (playing) {
-      btn.classList.remove("is-muted");
-      btn.classList.add("is-playing");
-      btn.title = "Đang phát nhạc — Bấm để tắt";
-    } else {
-      btn.classList.remove("is-playing");
-      btn.classList.add("is-muted");
-      btn.title = "Nhạc đang tắt — Bấm để bật";
-    }
-  }
-
-  function init() {
-    const btn = document.getElementById("music-toggle-btn");
-    if (btn) {
-      btn.addEventListener("click", () => {
-        // AudioContext must be created/resumed on user gesture (browser policy)
-        if (!audioCtx) {
-          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-          masterGain = audioCtx.createGain();
-          masterGain.gain.value = 0;
-          masterGain.connect(audioCtx.destination);
-        }
-        if (audioCtx.state === "suspended") {
-          audioCtx.resume();
-        }
-        toggleMute();
-      });
-    }
-  }
-
-  // ── Hook into renderCurrentState to auto-switch themes ────────────────
-  const _originalRenderCurrentState = window.renderCurrentState || null;
-
-  // Override renderCurrentState to inject theme switching
-  // (called after the original game renderCurrentState is defined)
-  function hookRenderState() {
-    const originalFn = renderCurrentState;
-    window.renderCurrentState = function() {
-      originalFn();
-      if (isPlaying && !isMuted) {
-        const newTheme = getThemeForCurrentStep();
-        switchTheme(newTheme);
-      }
-    };
-  }
-
-  // Delay hook until after DOMContentLoaded so renderCurrentState exists
-  document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(hookRenderState, 0);
-  });
-
-  return { init, startMusic, stopMusic, toggleMute, switchTheme };
-})();
-
-// Initialize music after DOM is ready (placed after MusicEngine definition)
-window.addEventListener("DOMContentLoaded", () => {
-  MusicEngine.init();
-});
-
+// undefined
